@@ -22,35 +22,36 @@ Digital Marketing vs. Traditional Marketing:
 | **Cost Efficiency** | Expensive, fixed budgets             | Scalable, flexible budgets                    |
 | **Feedback Loop**   | Slow                                 | Real-time                                     |
 
+
 Digital marketing generates massive data streams, making Marketing Analytics essential for actionable insights.
 
-Marketing Analytics Life Cycle
+Marketing Analytics Life Cycle:
 
-Data Collection – Gather raw data from campaigns, CRM, web, social, etc.
+- Data Collection – Gather raw data from campaigns, CRM, web, social, etc.
 
-Data Cleaning & Integration – Ensure data quality and unify sources.
+- Data Cleaning & Integration – Ensure data quality and unify sources.
 
-Exploratory Analysis – Understand patterns and trends.
+- Exploratory Analysis – Understand patterns and trends.
 
-Model Building – Apply MMM, MTA, or other models.
+- Model Building – Apply MMM, MTA, or other models.
 
-Optimization & Insights – Recommend improvements.
+- Optimization & Insights – Recommend improvements.
 
-Implementation – Execute strategy adjustments.
+- Implementation – Execute strategy adjustments.
 
-Monitoring – Continuously evaluate and refine.
+- Monitoring – Continuously evaluate and refine.
 
 Why is Marketing Analytics Useful?
 
-Optimize campaign spend and resource allocation
+- Optimize campaign spend and resource allocation
 
-Improve targeting and personalization
+- Improve targeting and personalization
 
-Measure ROI and marketing effectiveness
+- Measure ROI and marketing effectiveness
 
-Provide actionable customer insights
+- Provide actionable customer insights
 
-Enable predictive forecasting for future campaigns
+- Enable predictive forecasting for future campaigns
 
 Core Approaches in Marketing Analytics Modeling:
 
