@@ -55,7 +55,7 @@ Why is Marketing Analytics Useful?
 
 Core Approaches in Marketing Analytics Modeling:
 
-Marketing Mix Modeling (MMM)
+- Marketing Mix Modeling (MMM)
 
 Uses statistical regression to measure how different marketing channels (TV, radio, digital, promotions) impact sales.
 
@@ -63,19 +63,26 @@ Best for long-term, aggregate-level insights.
 
 Relies on historical data, less dependent on user-level tracking.
 
-Multi-Touch Attribution (MTA)
+- Multi-Touch Attribution (MTA)
 
 Focuses on user-level data and tracks how multiple touchpoints (ads, emails, clicks) contribute to a conversion.
 
+- Multi-Method Attribution (MMA)
+
+A hybrid approach combining MMM (macro view) and MTA (micro view).
+
+Provides a balanced understanding of both long-term trends and short-term user interactions.
+
+
 Modeling in Marketing vs. Machine Learning
 
-Marketing Models (MMM, MTA, MMA):
+- Marketing Models (MMM, MTA, MMA):
 
 Domain-specific, interpretable, and explain causal relationships.
 
 Focused on business insights and ROI measurement.
 
-Machine Learning Models:
+- Machine Learning Models:
 
 More general-purpose, focused on prediction accuracy.
 
@@ -86,8 +93,3 @@ Best for short-term, digital campaigns.
 
 Provides granular insights into customer journeys.
 
-Multi-Method Attribution (MMA)
-
-A hybrid approach combining MMM (macro view) and MTA (micro view).
-
-Provides a balanced understanding of both long-term trends and short-term user interactions.
