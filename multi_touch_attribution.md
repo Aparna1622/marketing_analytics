@@ -117,3 +117,9 @@ The Display Ad assists the conversion, while Organic Search receives the final c
 
 <img width="646" height="409" alt="image" src="https://github.com/user-attachments/assets/ef8f50e4-865b-41d8-b1ee-039a7f417be5" />
 
+---
+
+# How the attribuiton modeling work? 
+
+<img width="1000" height="700" alt="image" src="https://github.com/user-attachments/assets/c35779cd-c37a-4d85-b906-d4b828647d35" />
+
