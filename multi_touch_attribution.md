@@ -126,5 +126,12 @@ The Display Ad assists the conversion, while Organic Search receives the final c
 # Evolution of Attribution in Marketing: 
 <img width="973" height="601" alt="image" src="https://github.com/user-attachments/assets/5da5dfac-d107-45c0-85e6-1f14e9e4452a" />
 
-<img width="896" height="666" alt="image" src="https://github.com/user-attachments/assets/a0d6f217-c896-43b4-8dba-10558e3f8d23" />
+<img width="896" height="666" alt="image" src="https://github.com/user-attachments/assets/a0d6f217-c896-43b4-8dba-10558e3f8d23" /> 
+
+---
+
+<img width="850" height="369" alt="image" src="https://github.com/user-attachments/assets/ec1ae584-d5f1-4d4f-9b3b-35f042ac57c5" /> 
+
+---
+
 
