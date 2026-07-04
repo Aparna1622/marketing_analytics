@@ -168,45 +168,48 @@ The Display Ad assists the conversion, while Organic Search receives the final c
 
 ---
 
-![Uploading image.png…]()  
+<img width="603" height="363" alt="image" src="https://github.com/user-attachments/assets/601ebc42-47ac-4ee1-8e3a-55762c393980" />
+
 
 ## Adwords:  
 
 AdWords was the former name of Google's online advertising platform. In 2018, Google renamed it to Google Ads.
 
-It allows businesses to display ads across Google's ecosystem, including:
+It allows businesses to display ads across Google's ecosystem, including:  
 
-Google Search results
-YouTube
-Gmail
-Websites and apps that are part of the Google Display Network
-Google Shopping (for eligible products)
-How it works
+Google Search results  
+YouTube  
+Gmail  
+Websites and apps that are part of the Google Display Network  
+Google Shopping (for eligible products)  
+How it works  
 
 Google Ads uses an auction system. When someone searches for a keyword (for example, "best running shoes"), advertisers who are targeting that keyword compete to show their ads.
 
-Google determines which ads appear based on factors such as:
+Google determines which ads appear based on factors such as:  
 
-Bid: How much the advertiser is willing to pay.
-Ad Quality (Quality Score): How relevant and useful the ad and landing page are.
-Expected impact of ad assets: Such as sitelinks, call buttons, and other extensions.
-Common pricing models
-Cost Per Click (CPC): Pay only when someone clicks your ad.
-Cost Per Mille (CPM): Pay per 1,000 ad impressions.
-Cost Per Acquisition (CPA): Pay based on conversions, often using automated bidding.
-Cost Per View (CPV): Commonly used for video ads on YouTube.
-Example
+Bid: How much the advertiser is willing to pay.  
+Ad Quality (Quality Score): How relevant and useful the ad and landing page are.  
+Expected impact of ad assets: Such as sitelinks, call buttons, and other extensions.  
+Common pricing models  
+Cost Per Click (CPC): Pay only when someone clicks your ad.  
+Cost Per Mille (CPM): Pay per 1,000 ad impressions.  
+Cost Per Acquisition (CPA): Pay based on conversions, often using automated bidding.   
+Cost Per View (CPV): Commonly used for video ads on YouTube.  
 
-Suppose you own a bakery in Hyderabad.
+Example  
 
-You create an ad targeting the keyword "birthday cakes near me."
-When someone searches for that phrase, your ad may appear at the top of the search results.
-If they click your ad, you pay Google the amount determined by the auction.
-Benefits
-Reach people who are actively searching for your products or services.
-Set your own daily or monthly budget.
-Target audiences by location, language, interests, device, and more.
-Measure results such as clicks, leads, sales, and return on investment.
+Suppose you own a bakery in Hyderabad.  
+
+You create an ad targeting the keyword "birthday cakes near me."   
+When someone searches for that phrase, your ad may appear at the top of the search results.  
+If they click your ad, you pay Google the amount determined by the auction.  
+
+Benefits  
+Reach people who are actively searching for your products or services.  
+Set your own daily or monthly budget.  
+Target audiences by location, language, interests, device, and more.  
+Measure results such as clicks, leads, sales, and return on investment.  
 
 In short, AdWords is simply the old name for Google Ads, Google's platform for creating and managing online advertisements.
 
