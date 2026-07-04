@@ -164,9 +164,12 @@ The Display Ad assists the conversion, while Organic Search receives the final c
 
 ---
 
+<img width="622" height="337" alt="image" src="https://github.com/user-attachments/assets/84367449-c52c-4e3c-9c1e-91eb10a0195d" />  
 
+---
 
-<img width="622" height="337" alt="image" src="https://github.com/user-attachments/assets/84367449-c52c-4e3c-9c1e-91eb10a0195d" />
+![Uploading image.png…]()
+
 
 
 
