@@ -441,11 +441,115 @@ Container = Stores everything.
 Tag = Performs the action.  
 Trigger = Decides when the action happens.  
 Variable = Provides the information used by tags and triggers.  
-Display Panel (Preview Mode) = Lets you verify that everything is working as expected before you publish your changes.
+Display Panel (Preview Mode) = Lets you verify that everything is working as expected before you publish your changes.  
+
+<img width="483" height="211" alt="image" src="https://github.com/user-attachments/assets/f1760559-24ab-4230-b740-1f4e6abc6c15" />  
+
+---
+
+<img width="617" height="382" alt="image" src="https://github.com/user-attachments/assets/e812d043-4bfe-4ae7-9dce-55186c4b763b" />  
+
+---
+
+<img width="562" height="374" alt="image" src="https://github.com/user-attachments/assets/4ff8000b-4310-4764-9ac5-ba4e9ef18aee" />  
+
+---
+
+## Holistic measurement, Full credit measurement and Active measurement:
+
+These three terms are commonly used in digital marketing and Google Ads/Google Marketing Platform to describe different ways of measuring advertising performance.
+
+# 1. Holistic Measurement
+
+Holistic measurement means measuring the entire customer journey instead of looking at only one marketing channel.
+
+It combines data from multiple sources, such as:
+
+Google Ads  
+Social media ads  
+Email marketing  
+Organic search (SEO)  
+Website analytics  
+Mobile apps  
+Offline sales (if available)  
+# Example  
+
+A customer:
+
+Sees your Facebook ad.  
+Searches for your brand on Google.  
+Clicks your Google Search ad.  
+Visits your website.  
+Purchases the product.  
+
+Instead of giving credit only to Google Ads, holistic measurement analyzes the whole journey to understand how each marketing channel contributed to the sale.
+
+Purpose: Helps businesses make better marketing decisions by seeing the complete picture.
+
+# 2. Full Credit Measurement
+
+Full credit measurement means 100% of the conversion credit is given to one interaction in the customer journey.
+
+This is also known as single-touch attribution.
+
+Example
+
+Customer Journey:
+
+Instagram Ad → Google Search → Website → Purchase
+
+If you use:
+
+First Click Attribution: Instagram gets 100% of the credit.  
+Last Click Attribution: Google Search gets 100% of the credit.  
+
+Even though both channels helped, only one receives all the credit.
+
+Why it's limited
+
+It ignores the influence of other touchpoints, so it may not reflect the true impact of your marketing efforts.
+
+# 3. Active Measurement
+
+Active measurement refers to actively collecting data about how users interact with your ads and website to measure campaign performance.
+
+It focuses on metrics such as:
+
+Ad impressions  
+Clicks  
+Conversions  
+Viewability (whether an ad was actually seen)  
+Engagement  
+User behavior after clicking an ad  
+Example  
+
+You run a Google Ads campaign.
+
+Active measurement tracks:
+
+How many people saw the ad.  
+How many clicked it.  
+How many filled out a form or made a purchase.  
+Whether the ad was visible on the screen.  
+Which campaign generated the most conversions.  
+
+This data helps advertisers optimize campaigns and improve return on investment (ROI).
 
 
+## Quick Comparison
 
-<img width="483" height="211" alt="image" src="https://github.com/user-attachments/assets/f1760559-24ab-4230-b740-1f4e6abc6c15" />
+| Term | Meaning | Example |
+|------|---------|---------|
+| **Holistic Measurement** | Measures the complete customer journey across all marketing channels. | Tracks a user from a social media ad to a Google search and then a purchase. |
+| **Full Credit Measurement** | Gives 100% of the conversion credit to a single interaction (first click or last click). | Only the Google Search ad gets credit for the sale. |
+| **Active Measurement** | Continuously collects and analyzes user interaction data to evaluate ad performance. | Measures impressions, clicks, conversions, and engagement for a campaign. |
+
+# In simple terms  
+Holistic Measurement = Look at the whole journey.  
+Full Credit Measurement = Give all the credit to one touchpoint.  
+Active Measurement = Continuously track and measure how ads are performing.
+
+
 
 
 
