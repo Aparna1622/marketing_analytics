@@ -269,16 +269,16 @@ Tag: Send a purchase event to GA4.
 
 Without the trigger, GTM doesn't know when to execute the tag.
 
-How they work together
-Container
-│
-├── Tag: GA4 Page View
-│      └── Trigger: All Pages
-│
-├── Tag: Facebook Pixel
-│      └── Trigger: Page View
-│
-└── Tag: Purchase Conversion
+How they work   
+Container  
+│  
+├── Tag: GA4 Page View  
+│      └── Trigger: All Pages  
+│  
+├── Tag: Facebook Pixel  
+│      └── Trigger: Page View  
+│  
+└── Tag: Purchase Conversion  
        └── Trigger: Thank You Page
 
 Flow:
@@ -302,7 +302,150 @@ The Container holds everything.
 The Tag does the work.  
 The Trigger decides when the work happens.  
 
-This relationship is the foundation of Google Tag Manager and is essential for implementing analytics, conversion tracking, and marketing pixels without directly editing your website's code each time.
+This relationship is the foundation of Google Tag Manager and is essential for implementing analytics, conversion tracking, and marketing pixels without directly editing your website's code each time.  
+
+---
+
+In Google Tag Manager (GTM), Variables provide data that tags and triggers use, while the Display Panel (commonly called Preview Mode or the Tag Assistant debug panel) helps you see what GTM is doing on your website.
+
+1. Variables  
+
+A Variable is a value or piece of information that GTM can read and use.  
+
+Variables answer questions like:
+
+Which page is the user on?  
+What button was clicked?  
+What is the page URL?  
+What is the transaction value?  
+Types of Variables  
+Built-in Variables  
+
+These are provided by GTM and can be enabled as needed.
+
+Examples:
+
+Page URL  
+Page Path  
+Page Hostname  
+Click Text  
+Click URL  
+Click Classes  
+Form ID  
+Scroll Depth  
+User-Defined Variables
+
+You create these yourself for custom tracking.
+
+Examples:
+
+Constant Variable (stores a fixed value like a Measurement ID)  
+Data Layer Variable  
+JavaScript Variable  
+URL Variable  
+Cookie Variable  
+Custom JavaScript Variable  
+Example
+
+Suppose someone clicks:
+
+<button class="buy-btn">Buy Now</button>
+
+When clicked:
+
+Click Text = Buy Now  
+Click Classes = buy-btn  
+Click URL = (if it's a link)  
+
+You can use these variables in a trigger, such as:
+
+Fire the tag only if Click Text = "Buy Now".  
+2. Display Panel (Preview Mode / Tag Assistant)
+
+The Display Panel is GTM's debugging interface that appears when you click Preview. It lets you test your setup before publishing.
+
+It shows:
+
+Which events occurred  
+Which tags fired  
+Which tags did not fire  
+Which triggers matched  
+The current values of variables  
+Data Layer events  
+What you'll see  
+
+Typical events include:
+
+Container Loaded  
+Initialization  
+DOM Ready  
+Window Loaded  
+Click  
+Form Submit  
+Custom Events
+
+When you select an event, you can inspect:
+
+Tags  
+Tags Fired  
+Tags Not Fired  
+Variables  
+Current values for all variables at that event  
+Data Layer  
+Data available to GTM  
+Example
+
+Suppose you click a Buy Now button.
+
+The debug panel may show:
+
+Event	Result
+Click	User clicked the button  
+Variables	Click Text = "Buy Now"  
+Trigger	Click Text equals "Buy Now"  
+Tag	GA4 Purchase Event Fired ✅
+
+This helps confirm that your tracking is working correctly.
+
+Relationship between GTM components  
+Container  
+│  
+├── Variables  
+│     ├── Page URL  
+│     ├── Click Text  
+│     └── Data Layer Variable  
+│  
+├── Triggers  
+│     └── Uses variables to decide when to fire  
+│  
+├── Tags  
+│     └── Uses variables to send data  
+│  
+└── Preview (Display Panel)  
+      ├── Shows events  
+      ├── Shows variables  
+      ├── Shows fired tags  
+      └── Shows data layer  
+      
+Summary  
+Component	Purpose	Example
+Container	Holds all GTM configurations	Website GTM account
+Tag	Performs a tracking action	Send a GA4 event
+Trigger	Determines when a tag fires	Button click
+Variable	Supplies data to tags and triggers	Page URL, Click Text
+Display Panel (Preview Mode)	Debugs and tests GTM before publishing	Shows fired tags, variables, and events
+
+A simple way to remember it is:  
+
+Container = Stores everything.  
+Tag = Performs the action.  
+Trigger = Decides when the action happens.  
+Variable = Provides the information used by tags and triggers.  
+Display Panel (Preview Mode) = Lets you verify that everything is working as expected before you publish your changes.
+
+
+
+<img width="483" height="211" alt="image" src="https://github.com/user-attachments/assets/f1760559-24ab-4230-b740-1f4e6abc6c15" />
 
 
 
