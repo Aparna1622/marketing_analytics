@@ -21,9 +21,12 @@ It is nothing more than the application of analytical methods to said goal, brin
 <img width="718" height="483" alt="image" src="https://github.com/user-attachments/assets/980c51b6-70fa-4d4c-bcf0-7b58484fff66" />  
 
 All analytical questions can be boiled into the following categories:  
-1. What happened and when did it happen?
-2. Why and how did it happen?
-3. What will happen in the future?
-4. How can I make something happen?
+1. What happened and when did it happen? - Descriptive analytics  
+   - limitation: when someone asks you what happened, what they are really asking is why it happened, which lead us to the next step, diagnostic analytics.  
+2. Why and how did it happen? - Diagnostics analytics  
+   - In most of the cases, this stage of analytics is often skipped and people will jump straight into the predictive analytics. If you cannot infer why your cost per acquisition jumped by 25 percent in the previous quarter, it will be stretch to attempt to forecast what will happen to your cost per acquisition in the next two quarters.  
+3. What will happen in the future?- Predictive analytics
+4 . How can I make something happen?- Prescriptive analytics
+   caveat: we should not miss the ladder to jump into this directly. We need the outputs from the previous pillars of descriptive, diagnostic and predictive analytics.
 
 
