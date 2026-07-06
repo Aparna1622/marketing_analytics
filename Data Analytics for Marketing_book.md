@@ -29,4 +29,8 @@ All analytical questions can be boiled into the following categories:
 4 . How can I make something happen?- Prescriptive analytics
    caveat: we should not miss the ladder to jump into this directly. We need the outputs from the previous pillars of descriptive, diagnostic and predictive analytics.
 
+---
+# Paralysis by analysis is a reality  
+ overthinking and endlessly researching a problem prevent you from making a decision. Driven by perfectionism or fear of making the wrong choice, your brain becomes overwhelmed by the information, causing you to freeze and take no action at all.
+
 
