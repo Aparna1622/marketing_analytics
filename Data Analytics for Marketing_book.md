@@ -31,6 +31,18 @@ All analytical questions can be boiled into the following categories:
 
 ---
 # Paralysis by analysis is a reality  
- overthinking and endlessly researching a problem prevent you from making a decision. Driven by perfectionism or fear of making the wrong choice, your brain becomes overwhelmed by the information, causing you to freeze and take no action at all.
+ overthinking and endlessly researching a problem prevent you from making a decision. Driven by perfectionism or fear of making the wrong choice, your brain becomes overwhelmed by the information, causing you to freeze and take no action at all.  
+
+ ---
+
+ # Urchin Tracking Module(UTM) parameters:  
+ There are introduced by Google to track the conversions from the URLs. They are as follows:  
+ - utm_source: The source of the traffic, such as search engine or a newsletter  
+ - utm_medium: The medium of the traffic, such as email or CPC.  
+ - utm_campaign: The name of the campaign  
+ - utm_term: The keyword used to find the site  
+ - utm_content: Used for A/B testing and content-targeted ads.
+
+ 
 
 
