@@ -13,7 +13,7 @@ It is the act of extracting meaningful and actionable insights from data by usin
 It is nothing more than the application of analytical methods to said goal, bringing a quantifiable way of guiding investment or consumer targeting decisions. In other words, it is the technology-enabled and model-supported approach to harness customer and market data to enhance marketing decision making.  
 
 # why marketing analytics?  
-- Standard techniques frequently used in marketing include media mix modeling, pricing and promotion analyses, sales force optimization, and customer analytics such as segmentation or lifetime value estimation. The optimization of websites adn online campaigns nwo frequently workds hand in hand with the more traditional marketing analysis techniques, coupled with attribution modeling and media mix modeling to understand channel interactions and optimal budget allocation.
+- Standard techniques frequently used in marketing include media mix modeling, pricing and promotion analyses, sales force optimization, and customer analytics such as segmentation or lifetime value estimation. The optimization of websites and online campaigns nwo frequently workds hand in hand with the more traditional marketing analysis techniques, coupled with attribution modeling and media mix modeling to understand channel interactions and optimal budget allocation.
 - It can also helps with how much to spend on markting and how to allocate budgets across a portfolio of brands and the marketing mix- and more tactical campaign support in terms of targeting the best potential customer with the optimal message in the most cost-effective medium at the ideal time.
 
 # Different types of analytics  
