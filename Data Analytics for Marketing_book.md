@@ -56,4 +56,29 @@ Singer defines some core concepts to handle the common data pipeline abstraction
 # 1. Taps:  
 The primary function of a tap is to extract data from its source in a structured format. Taps are designed to be source specific, meaning each tap is tailored to extract data from a particular type of data source. For instance, there might be a tap for salesforce, another for MySQL databases and yet another for Google sheets.  
 
+# Targets:  
+A targets, in Singer parlance, is a data loading script or tool that takes the standardized output from a tap and loads it into a destination system. Destinations can vary widely and can include databases, datawarehouses, analytics platforms, or even other file formats. Like taps, targets are designed to be destination-specific, with each target crafted to load data into a particular type of destination. For example, there might be a target for loading data into PostgreSQL, another for Snowflake, and another for a CSV file.  
+The role of the target is to receive the data from the tap, transform it if necessary to fit the destination's requirements, and then manage the process of inserting the data into the destination. This process may involve handling authentication with the destination, managing API request for web-based destinations, executing SQL commands for databases, or simply writing files in the case of file-based destinations.  
+
+Singer has targets for CSV files, databases such as PostgreSQL, and even ETL platforms such as Keboola.  
+
+# Data exchange format:  
+A JSON file, with a Singer-specific schema, is used as the data exchange format between taps and targets. While it may seem an unnecessary extra step, it allows us to abstract away the data exchange from the specific tap and target, making it agnostic.  
+
+---
+
+# Descriptive statistics:  
+# Histogram:  
+It is nothing more than a count of the frequency of the ordered values, in bins of fixed size. This shows us the shape and spread of the data.  
+
+# Percentiles and Quartiles:  
+Percentiles split the data from the 1st to the 100th percentile. In numpy, we can control the percentile we want by using the q parameter, with a range from 1 to 100.  
+
+A quantile is simply the percentile that splits the data into quarters and can be calculated with the np.quantile() function, with the difference that the control parameter ranges from 0 to 1.  
+
+The IQR is a good method for spotting outliers as we can use a simple heuristic of calculating the upper and lower bounds.  
+
+lower_bound=Q1-1.5*IQR  
+upper_bound=Q3+1.5*IQR  
+
 
