@@ -217,5 +217,7 @@ Mode = L + [(f₁ - f₀) / (2f₁ - f₀ - f₂)] × h
 - May have more than one mode or no mode.
 - Does not use all observations.
 
+# Data skewness:  
+<img width="539" height="335" alt="image" src="https://github.com/user-attachments/assets/89fb9817-4b29-4ea9-a6e4-b2618de6ad15" />
 
 
