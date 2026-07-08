@@ -144,6 +144,78 @@ More accurate when data have different weights.
 
 Cons  
 Requires appropriate weights.  
-Can be misleading if weights are chosen poorly.  
+Can be misleading if weights are chosen poorly. 
+
+# Median:  
+# 3. Median
+
+**Definition**
+
+The median is the middle value of a dataset when the data is arranged in ascending or descending order.  
+
+# Discrete Data Formula
+
+- If n is odd:
+  Median = (n + 1)/2 th observation
+
+- If n is even:
+  Median = Average of (n/2)th and (n/2 + 1)th observations
+
+# Continuous Data Formula (Grouped Data)
+
+Median = L + [((N/2) - CF) / f] × h
+
+**Where**
+
+- L = Lower boundary of median class
+- N = Total frequency
+- CF = Cumulative frequency before the median class
+- f = Frequency of the median class
+- h = Class width
+
+# Pros
+
+- Not affected by outliers.
+- Suitable for skewed data.
+
+# Cons
+
+- Does not use all observations.
+- Less useful for advanced statistical analysis.
+
+---
+
+# 4. Mode
+
+**Definition**
+
+The mode is the value that occurs most frequently in a dataset.
+
+# Discrete Data Formula
+
+Mode = Value with the highest frequency.
+
+# Continuous Data Formula (Grouped Data)
+
+Mode = L + [(f₁ - f₀) / (2f₁ - f₀ - f₂)] × h
+
+**Where**
+
+- L = Lower boundary of modal class
+- f₁ = Frequency of modal class
+- f₀ = Frequency of class before modal class
+- f₂ = Frequency of class after modal class
+- h = Class width
+
+# Pros
+
+- Easy to identify.
+- Can be used for nominal (categorical) data.
+
+# Cons
+
+- May have more than one mode or no mode.
+- Does not use all observations.
+
 
 
