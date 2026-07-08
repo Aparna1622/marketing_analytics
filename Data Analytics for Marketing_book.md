@@ -89,7 +89,61 @@ A good visualization for this is a boxplot, also known as a box and whiskers plo
 
 An alternative to using a boxplot, but with the same function, is a violin plot. A violin plot blends the characteristics of a box plot with those of a histogram. It will show the distribution of the data, along with the mean, 1st and 3rd quantiles, and the IQR range. The name comes from the shape of how the distribution looks in the chart, shaped like a violin.  
 
-<img width="365" height="365" alt="image" src="https://github.com/user-attachments/assets/d090eb92-ac29-43d0-a330-6744c307b957" />
+<img width="365" height="365" alt="image" src="https://github.com/user-attachments/assets/d090eb92-ac29-43d0-a330-6744c307b957" />  
 
+# Difference between boxplot and violin plot:  
+While a boxplot only shows summary statistics such as the median, interquartile range, and outliers, a violin plot shows the entire distribution of the data. This encompasses additional information, such as the density of the data points around different values, thus providing more nuanced(subtle details) insights into the shape of the data distribution.  
+
+# Descriptive statistics:  
+# Mean:  
+Definition  
+The mean is the average value of a dataset.  
+Discrete Data Formula  
+Formula  
+Mean = (Σx) / n  
+Where  
+x = observations  
+n = number of observations  
+
+Continuous Data Formula (Grouped Data)  
+Formula  
+Mean = (Σf·m) / (Σf)  
+Where  
+f = frequency  
+m = class midpoint  
+Pros  
+Easy to calculate.  
+Uses all data values.  
+Useful for further statistical analysis.  
+
+Cons  
+Affected by outliers.  
+May not represent skewed data well.
+
+# Weighted Mean  
+Definition  
+The weighted mean gives different importance (weights) to different observations.  
+Discrete Data Formula  
+Formula  
+Weighted Mean = (Σw·x) / (Σw)  
+Where  
+x = observations  
+w = weights  
+
+Continuous Data Formula  
+
+Formula  
+Weighted Mean = (Σw·m) / (Σw)  
+Where  
+m = class midpoint  
+w = weight or frequency  
+
+Pros  
+Accounts for importance of observations.  
+More accurate when data have different weights.  
+
+Cons  
+Requires appropriate weights.  
+Can be misleading if weights are chosen poorly.  
 
 
