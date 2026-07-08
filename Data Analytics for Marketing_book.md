@@ -81,4 +81,10 @@ The IQR is a good method for spotting outliers as we can use a simple heuristic 
 lower_bound=Q1-1.5*IQR  
 upper_bound=Q3+1.5*IQR  
 
+Any data point outside of the bounds can be classified as an outlier.  
+
+A good visualization for this is a boxplot, also known as a box and whiskers plot. It plots a box that's bounded by the 1st and 3rd quantiles- that is, the 25% and 75% portions of the data. The line in the middle of the box will show us the median. The length of the box is the IQR, and you know that is contains, by definition, 50% of the dataset. The bars at the edges represent the 1.5*IQR. Everything below, or above, can be considered an outlier.  
+
+An alternative to using a boxplot, but with the same function, is a violin plot. A violin plot blends the characteristics of a box plot with those of a histogram. It will show the distribution of the data, along with the mean, 1st and 3rd quantiles, and the IQR range. The name comes from the shape of how the distribution looks in the chart, shaped like a violin.
+
 
