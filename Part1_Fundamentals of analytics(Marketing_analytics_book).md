@@ -218,6 +218,31 @@ Mode = L + [(f₁ - f₀) / (2f₁ - f₀ - f₂)] × h
 - Does not use all observations.
 
 # Data skewness:  
-<img width="539" height="335" alt="image" src="https://github.com/user-attachments/assets/89fb9817-4b29-4ea9-a6e4-b2618de6ad15" />
+<img width="539" height="335" alt="image" src="https://github.com/user-attachments/assets/89fb9817-4b29-4ea9-a6e4-b2618de6ad15" />  
+
+# Measures of variability:  
+# Range
+
+**Definition**
+
+The range is the difference between the largest and smallest values in a dataset.
+
+# Discrete Data Formula
+
+Range = Maximum Value − Minimum Value
+
+# Continuous Data Formula (Grouped Data)
+
+Range = Upper Boundary of Highest Class − Lower Boundary of Lowest Class
+
+**Pros**
+
+- Very easy to calculate.
+- Gives a quick measure of data spread.
+
+**Cons**
+
+- Uses only the largest and smallest values.
+- Highly affected by outliers.
 
 
