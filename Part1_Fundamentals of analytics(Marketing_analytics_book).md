@@ -238,11 +238,155 @@ Range = Upper Boundary of Highest Class − Lower Boundary of Lowest Class
 **Pros**
 
 - Very easy to calculate.
-- Gives a quick measure of data spread.
+- Gives a quick measure of data spread.  
+
 
 **Cons**
 
 - Uses only the largest and smallest values.
 - Highly affected by outliers.
 
+# Variance:  
+Here we will calculate the spread of the data from the mean. On a dataset, the sum of absolute deviations from the mean will sum to zero, so you essentially dividing 0 by a number, which is 0, rendering the metric useless. The underlying cause of this is that some data points will deviate with a positive sign from the mean, and others with a negative sign, essentially canceling each other out. 
 
+The obvious solution is just to square the individual deviations from the mean and sum them. This would turn every negative deviation into a positive number while preserving the magnitude of deviation. One caveat here is, we had to square the deviations, meaning we are no longer measuring in the same units as the underlying data. That is where standard deviation comes in.
+
+
+**Definition**
+
+Variance measures how far the data values are spread from the mean.
+
+# Discrete Data Formula
+
+Population Variance:
+σ² = Σ(x − μ)² / N
+
+Sample Variance:
+s² = Σ(x − x̄)² / (n − 1)
+
+**Where**
+
+- x = Observation
+- μ = Population mean
+- x̄ = Sample mean
+- N = Population size
+- n = Sample size
+
+# Continuous Data Formula (Grouped Data)
+
+Population Variance:
+σ² = Σf(m − μ)² / Σf
+
+Sample Variance:
+s² = Σf(m − x̄)² / (Σf − 1)
+
+**Where**
+
+- f = Frequency
+- m = Class midpoint
+
+# Pros
+
+- Uses all data values.
+- Measures data spread accurately.
+
+# Cons
+
+- Affected by outliers.
+- Difficult to interpret because units are squared.
+
+# Why do we divide by (n − 1) in Sample Variance?
+
+When calculating **sample variance**, we divide by **(n − 1)** instead of **n** because the sample mean is estimated from the sample itself. This uses **one degree of freedom**, leaving only **(n − 1)** independent observations.
+
+Dividing by **n** tends to **underestimate** the true population variance. Using **(n − 1)** (called **Bessel's Correction**) provides a better estimate of the population variance.
+
+---
+
+## Example 1
+
+Sample data:
+
+```
+2, 4
+```
+
+Sample mean:
+
+```
+(2 + 4) / 2 = 3
+```
+
+Squared deviations:
+
+```
+(2 − 3)² = 1
+(4 − 3)² = 1
+
+Total = 2
+```
+
+Using **n**:
+
+```
+Variance = 2 / 2 = 1
+```
+
+Using **(n − 1)**:
+
+```
+Variance = 2 / 1 = 2
+```
+
+Dividing by **(n − 1)** gives a better estimate of the population variance.
+
+---
+
+## Example 2 (Understanding Degree of Freedom)
+
+Suppose the sample is:
+
+```
+5, 8, ?
+```
+
+The sample mean is **10**.
+
+```
+(5 + 8 + x) / 3 = 10
+```
+
+```
+5 + 8 + x = 30
+```
+
+```
+x = 17
+```
+
+Once you know the **sample mean** and the **first two values**, the **last value has no freedom**—it is completely determined.
+
+In general:
+
+> Once the sample mean is fixed, **one observation becomes constrained.**
+
+Therefore:
+
+> **Only (n − 1) values are free to vary.**
+
+This is why the number of **degrees of freedom** is:
+
+```
+Degrees of Freedom = n − 1
+```
+
+---
+
+# Key Points
+
+- **Population Variance** → Divide by **N**
+- **Sample Variance** → Divide by **(n − 1)**
+- The sample mean is estimated from the sample itself.
+- Once the sample mean is fixed, **one observation becomes constrained**.
+- **Only (n − 1) observations are free to vary.**
+- Using **(n − 1)** (Bessel's Correction) gives an unbiased estimate of the population variance.
