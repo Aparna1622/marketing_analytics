@@ -26,7 +26,7 @@ All analytical questions can be boiled into the following categories:
 2. Why and how did it happen? - Diagnostics analytics  
    - In most of the cases, this stage of analytics is often skipped and people will jump straight into the predictive analytics. If you cannot infer why your cost per acquisition jumped by 25 percent in the previous quarter, it will be stretch to attempt to forecast what will happen to your cost per acquisition in the next two quarters.  
 3. What will happen in the future?- Predictive analytics  
-4. How can I make something happen?- Prescriptive analytics
+4. How can I make something happen?- Prescriptive analytics  
    caveat: we should not miss the ladder to jump into this directly. We need the outputs from the previous pillars of descriptive, diagnostic and predictive analytics.
 
 ---
@@ -49,14 +49,14 @@ All analytical questions can be boiled into the following categories:
 It is a concept in programming that reflects the extra development work that arises when code that is easy to implement in the short run is used instead of applying the best overall solution. It is the software engineering equivalent of using your credit card to pay a bill. You will have to pay down the interest,; the longer you wait, the higher the cost you will incur.
  
 ---
-## ETL  
+# ETL  
 # Singer  
 It is an open source standard for ETL created and sponsored by Stitch that lets you write scripts to move data from sources to targets. In essence, it allows us to quickly create a data pipeline.  
 Singer defines some core concepts to handle the common data pipeline abstractions:  
 # 1. Taps:  
 The primary function of a tap is to extract data from its source in a structured format. Taps are designed to be source specific, meaning each tap is tailored to extract data from a particular type of data source. For instance, there might be a tap for salesforce, another for MySQL databases and yet another for Google sheets.  
 
-# Targets:  
+# 2. Targets:  
 A targets, in Singer parlance, is a data loading script or tool that takes the standardized output from a tap and loads it into a destination system. Destinations can vary widely and can include databases, datawarehouses, analytics platforms, or even other file formats. Like taps, targets are designed to be destination-specific, with each target crafted to load data into a particular type of destination. For example, there might be a target for loading data into PostgreSQL, another for Snowflake, and another for a CSV file.  
 The role of the target is to receive the data from the tap, transform it if necessary to fit the destination's requirements, and then manage the process of inserting the data into the destination. This process may involve handling authentication with the destination, managing API request for web-based destinations, executing SQL commands for databases, or simply writing files in the case of file-based destinations.  
 
@@ -78,8 +78,10 @@ A quantile is simply the percentile that splits the data into quarters and can b
 
 The IQR is a good method for spotting outliers as we can use a simple heuristic of calculating the upper and lower bounds.  
 
-lower_bound=Q1-1.5*IQR  
-upper_bound=Q3+1.5*IQR  
+```text
+lower_bound=Q1-1.5*IQR
+upper_bound=Q3+1.5*IQR
+```    
 
 Any data point outside of the bounds can be classified as an outlier.  
 
@@ -147,7 +149,6 @@ Requires appropriate weights.
 Can be misleading if weights are chosen poorly. 
 
 # Median:  
-# 3. Median
 
 **Definition**
 
@@ -506,7 +507,9 @@ y(λ) = ln(x)
 # min-max scaling:  
 The effect of this normalization is to compress all data points in a range between 0 and 1. To achieve this, we must complete two steps:  
 1. Subtract the minimum value from each data point
-2. Divide ### Min-Max Normalization Formula
+2. Divide the preceding calculation by the maximum value-minimum value. The min-max is nothing more than the range.
+
+### Min-Max Normalization Formula
 
 ```
 x' = (x - min) / (max - min)
