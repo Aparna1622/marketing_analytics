@@ -390,3 +390,81 @@ Degrees of Freedom = n − 1
 - Once the sample mean is fixed, **one observation becomes constrained**.
 - **Only (n − 1) observations are free to vary.**
 - Using **(n − 1)** (Bessel's Correction) gives an unbiased estimate of the population variance.
+
+# Standard Deviation
+
+**Definition**
+
+Standard deviation measures how much the data values deviate (spread) from the mean. It is the square root of the variance and is expressed in the same unit as the data.
+
+# Discrete Data Formula
+
+Population Standard Deviation:
+
+σ = √[Σ(x − μ)² / N]
+
+Sample Standard Deviation:
+
+s = √[Σ(x − x̄)² / (n − 1)]
+
+**Where**
+
+- x = Observation
+- μ = Population mean
+- x̄ = Sample mean
+- N = Population size
+- n = Sample size
+
+# Continuous Data Formula (Grouped Data)
+
+Population Standard Deviation:
+
+σ = √[Σf(m − μ)² / Σf]
+
+Sample Standard Deviation:
+
+s = √[Σf(m − x̄)² / (Σf − 1)]
+
+**Where**
+
+- f = Frequency
+- m = Class midpoint
+
+# Pros
+
+- Uses all data values.
+- Expressed in the same unit as the data, making it easy to interpret.
+- Widely used in statistics and machine learning.
+
+# Cons
+
+- Affected by outliers.
+- Slightly more complex to calculate than the range or variance.
+
+---
+
+## Relationship with Variance
+
+```
+Standard Deviation = √Variance
+```
+
+```
+Variance = (Standard Deviation)²
+```
+
+# Example
+
+Suppose the variance of a dataset is:
+
+```
+Variance = 25
+```
+
+Then,
+
+```
+Standard Deviation = √25 = 5
+```
+
+This means the data values are, on average, about **5 units** away from the mean.
