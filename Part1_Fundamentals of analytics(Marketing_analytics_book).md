@@ -467,4 +467,48 @@ Then,
 Standard Deviation = √25 = 5
 ```
 
-This means the data values are, on average, about **5 units** away from the mean.
+This means the data values are, on average, about **5 units** away from the mean.  
+
+# Data standardization or scaling:  
+This method is usually done when one of the features has a higher variance than the others. It simply involves two steps:  
+1. Subtracting the mean from all data points, also know as centering
+2. Dividing the preceding calculations by the standard deviation, also know as scaling.
+
+# Note:  
+Data standardization will work if the features you are standardizing follow a linear distribution. A linear distribution is a pattern where the data is distributed evenly around the mean, resulting in a bell-shaped curve when plotted.  
+
+If your features do not follow a linear distribution, it is unwise to attempt to transform the data with the mean and standard deviation. Sales and revenue are usually examples of data that's ill-suited to this form of normalization due to their highly skewed nature. This is where power transformations come in.  
+
+---
+
+# Power transformations:  
+The most common power transformations is to log all values in your dataset. In most cases, this simple operation will force your data to "look normal". There are other transformations that you can do to variables like below:  
+
+<img width="707" height="155" alt="image" src="https://github.com/user-attachments/assets/539733e8-282f-4882-ae70-d0775b5815ab" />  
+
+
+Everything in mathematics, if there is a pattern, a ageneralization usually exists, and this case is no exception: the Box-Cox transformation. The Box-Cox transformation is defined as follows:  
+
+# Box-Cox Transformation Formula
+
+For **λ ≠ 0**:
+
+```text
+y(λ) = (x^λ - 1) / λ
+```
+
+For **λ = 0**:
+
+```text
+y(λ) = ln(x)
+```
+
+# min-max scaling:  
+The effect of this normalization is to compress all data points in a range between 0 and 1. To achieve this, we must complete two steps:  
+1. Subtract the minimum value from each data point
+2. Divide ### Min-Max Normalization Formula
+
+```
+x' = (x - min) / (max - min)
+```
+while this transformation forces the data to follow a normal distribution, the features will not have unit variance and a mean of 0. Also, its important to note that this transformation does not handle outliers well. Outliers are data points that are significantly different from the other data points. Because min-max scaling compresses all the points into the [0,1] range, outliers will become closer to the bulk of the data, and that reduces the ability to detect and handle these extreme values. It is best to handle outliers before applying min-max scaling.
