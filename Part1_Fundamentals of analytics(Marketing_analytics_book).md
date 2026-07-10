@@ -561,4 +561,16 @@ Accompany numerical values with contextual information to help viewers interpret
 **11. User engagement matters:**   
 Remember that dashboards are designed for people. While adhering to best practices, dont be afraid to deviate if it enhances viewer engagement and encourages interactions with the data.   
 **12. Continuous improvement:**   
-Regularly evaluate and evolve your dashboards to ensure they are driving the desired behaviors and delivering actionable insights.
+Regularly evaluate and evolve your dashboards to ensure they are driving the desired behaviors and delivering actionable insights.  
+
+## Thinking about how to best represent data:  
+All too often, analysts just throw charts at the screen. But not all charts are born equal. Each chart serves a purpose, given the information you intend to convey. There are four main categories in charts:  
+**Understanding relationships**
+**Comparing categories or timeframes**
+**Seeing the composition of the data**
+**Seeing the distribution or shape of the data**  
+
+**An overview of the chart types. Each chart has a purpose**
+
+<img width="402" height="216" alt="image" src="https://github.com/user-attachments/assets/37b6e13e-f826-47d6-892a-de90290624ce" />
+
