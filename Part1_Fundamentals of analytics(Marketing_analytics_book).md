@@ -514,4 +514,27 @@ The effect of this normalization is to compress all data points in a range betwe
 ```
 x' = (x - min) / (max - min)
 ```
-while this transformation forces the data to follow a normal distribution, the features will not have unit variance and a mean of 0. Also, its important to note that this transformation does not handle outliers well. Outliers are data points that are significantly different from the other data points. Because min-max scaling compresses all the points into the [0,1] range, outliers will become closer to the bulk of the data, and that reduces the ability to detect and handle these extreme values. It is best to handle outliers before applying min-max scaling.
+while this transformation forces the data to follow a normal distribution, the features will not have unit variance and a mean of 0. Also, its important to note that this transformation does not handle outliers well. Outliers are data points that are significantly different from the other data points. Because min-max scaling compresses all the points into the [0,1] range, outliers will become closer to the bulk of the data, and that reduces the ability to detect and handle these extreme values. It is best to handle outliers before applying min-max scaling.  
+
+# Designing
+Desing is not just what it looks like and feels like. Desgin is how it works  
+-- Steve Jobs  
+
+# Dashboards:  
+A dashboard is, at its simplest, a screen that attempts to condense key metrics and KPIs in an easy and intuitive way, to allow for easy digestion of numerical information. 
+
+# why dashboards?  
+As an analyst, we should always save the user time by building a dashboard which helps him/her in the more efficient way in the task that they are aiming for.
+
+# Types of dashboards and their design:  
+There are mainly three types of dashboards:  
+## 1. Operational dashboards:
+These help the user see what's happening right now. They will give one main drivers, that being to give information to the user quickly because they are dealing with the time-sensitive tasks that will most likely require immediate action. We want to present data deviations to the user quickly and accurately.
+
+## 2. Analytical dashboard:  
+These help the user understand patterns and trends and have a clear understanding of performance and potential issues for analysis and decision-making. They are not as time-sensitve, nor do they require immediate attention. The goal is to help the user spot trends and make sense of the data.  
+
+## 3. Strategic dashboard:  
+These dashboards will help the user track their strategic decisions by tracking key KPIs of the business.  
+
+
