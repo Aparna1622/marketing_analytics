@@ -537,4 +537,28 @@ These help the user understand patterns and trends and have a clear understandin
 ## 3. Strategic dashboard:  
 These dashboards will help the user track their strategic decisions by tracking key KPIs of the business.  
 
+# Designing concepts of a dashboard:  
+When thinking about a dashboard design, it is helpful to consider the exercise as if you were designing a product for consumers. In doing so, you should ask yourself what your target audience is and what they care about.  
 
+# Understanding your audience is key:  
+-- Are you talking to the operational side of the business, who need key metrics but a degree of detail to quickly make changes to a maketing campaign on their weekly reviews?
+-- Or are you talking to management, who do not need, nor have time for, the nitty-gritty details but need a more bird's-eye view(top down perspective from a high angle, like a bird sees the world) to make quarterly resource allocation of the budge?  
+
+When creating dashboards for marketing analytics, several key heuristics can guide your desing process and ensure the effectiveness of the visualizations. Some of the principles in designing a dashabord are listed below:  
+# 1. Define the purpose
+# 2. Prioritize important information  
+# 3. Optimize data-ink ratio:  
+Minimize the use of decorative elements that do not contribute to the communcation of data. Maximize the proportion of ink(or pixels) used to represent meaningful information.  
+# 4. Round the numbers for simplicity  
+# 5. Choose the right visualization
+# 6. Group related metrics  
+# 7. Maintain consistency:  
+Use the same color schema for similar metrics  
+# 8. Utilize size and position  
+# 9. Provide context for numbers:  
+Accompany numerical values with contextual information to help viewers interpret and evaluate their significance. Provide benchmarks, comparisons, or reference ranges to convey whether a number is good, bad, normal, or unusual.  
+# 10. Use clear labels
+# 11. User engagement matters:  
+Remember that dashboards are designed for people. While adhering to best practices, dont be afraid to deviate if it enhances viewer engagement and encourages interactions with the data.  
+# 12. Continuous improvement:  
+Regularly evaluate and evolve your dashboards to ensure they are driving the desired behaviors and delivering actionable insights.
