@@ -572,5 +572,10 @@ All too often, analysts just throw charts at the screen. But not all charts are 
 
 **An overview of the chart types. Each chart has a purpose**
 
-<img width="402" height="216" alt="image" src="https://github.com/user-attachments/assets/37b6e13e-f826-47d6-892a-de90290624ce" />
+<img width="402" height="216" alt="image" src="https://github.com/user-attachments/assets/37b6e13e-f826-47d6-892a-de90290624ce" />  
 
+ # Streamlit:  
+ There are increasing limitations to dashboards. They are, by their very nature, statis. Streamlit allows us to move into building dynamic data apps in a way that the user can interact with data in a manner not possible with a dashboard. Three reasons stand out when evaluating Streamlit.  
+ - First, Streamlit apps can be set up to reflect changes in real time when the underlying data changes. This means we can create live dashboars that update without user intervention or page refreshes.
+ - Secondly, Streamlit is built for Python, making it seamless to integrate with Python's extensive ecosystem of data science libraries such as Pandas, Numpy, and Matplotlib, and machine learning(ML) frameworks such as TensorFlow and scikit-learn.
+ - Finally, beyond predefined fileters and selections, Streamlit can take text input, file uploads, and other user-generated content to manipulate data or feed models on the fly, providing a more dynamic interaction model.
