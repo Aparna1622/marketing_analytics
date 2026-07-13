@@ -632,3 +632,57 @@ We have to keep in mind that the model is very sensitive to outliers. We need to
 
 The most common method to estimate a linear regression model is the OLS method. OLS stands for ordinary least squares, which refers to the way the statisical model fits to the data to produce the best-fit line. The best-fit line is the line that minimizes the sum of the squared errors. The errors are the difference between the actual value of the dependent variable and the predicted value of the dependent variable. The squared errors are used to avoid the errors cancelling each other out, when summing them.  
 
+**What we can do when assumptions break down:**  
+When faced with a breakdown in assumptions, there are some things we can go to mitigate the problem. One is extending the model, which relaxes the assumptions you are breaking.  
+* Obtaining the cleaner data
+* Adding predictors: Sometimes, adding predictors can provide more information, given that the new predictors are not correlated with the predictorss already in the model.
+* Adding interactions to the model non-linearities: This is done easily by multiplying predictors together. For example, if we have a predictor x1, and a predictor x2, we can add the interaction x1*x2 to the model. This will alow the model to capture non-linearities between the predictors.
+* Variable transformation: We can attempt data transformations of either the predictors, the outcome, or both.
+
+ # Interpreting the coefficient:  
+ The coefficients of a linear regression are often called effects. The terminology can be misleading and lead an analyst astray. As mentioned, quantifying a coefficient as an effect, or worst, a causal effect, requrires a lot of assumptions to lead us to causal inference. When you interpret the coefficient as a cause, you are essentially saying, "if I increase the value of a independent variable by one unit, the effect will be an increase of $\beta$ units in the dependent variable". In reality, what the model is estimating is the average difference in the dataset of $\beta$ units. It is a between-data point comparison not a within-data point comparison. 
+
+# Causal Inference
+
+**Definition**
+
+Causal Inference is the process of determining whether one variable **causes** a change in another variable, rather than simply being associated with it.
+
+**Goal**
+
+To answer the question:
+
+> **Does X cause Y?**
+
+instead of
+
+> **Are X and Y just correlated?**
+
+### Example
+
+- **Correlation:** Ice cream sales and drowning cases both increase in summer.
+- **Causation:** Smoking increases the risk of lung cancer.
+
+### Common Methods
+
+- Randomized Controlled Trials (RCTs)
+- A/B Testing
+- Difference-in-Differences (DiD)
+- Instrumental Variables (IV)
+- Propensity Score Matching (PSM)
+- Regression Discontinuity Design (RDD)
+
+### Pros
+
+- Identifies cause-and-effect relationships.
+- Supports better decision-making.
+- Helps estimate the impact of interventions.
+
+### Cons
+
+- Difficult to prove causality using observational data.
+- Requires strong assumptions.
+- Can be affected by confounding variables.
+
+Correlation → "X and Y move together."
+Causation (Causal Inference) → "X is the reason Y changes."
