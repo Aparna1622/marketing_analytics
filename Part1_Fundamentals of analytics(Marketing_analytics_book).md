@@ -685,4 +685,12 @@ instead of
 - Can be affected by confounding variables.
 
 Correlation → "X and Y move together."
-Causation (Causal Inference) → "X is the reason Y changes."
+Causation (Causal Inference) → "X is the reason Y changes."  
+
+Priors represent the beliefs about the possible values of the parameters before observing the data. In Bayesian statistics, priors are updated with the data to get the posterior distribution.  
+After fitting the model with data, the posterior distributions of the parameters are available. These distributions give the updated beliefs about the parameter after considering the data. Here we will find the following:  
+-- posterior: Contains the samples from the posterior distribution of the model's parameters.  
+-- log_likelihood: contains the log-likelihood values for each observations, which can be used for model comparison.  
+-- sample_stats: Contains summary statistics about the sampling process.  
+-- observed_data: The actual data that was used in the model fitting.  
+
