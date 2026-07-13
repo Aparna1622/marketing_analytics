@@ -694,3 +694,47 @@ After fitting the model with data, the posterior distributions of the parameters
 -- sample_stats: Contains summary statistics about the sampling process.  
 -- observed_data: The actual data that was used in the model fitting.  
 
+# Causal Inference
+
+**Definition**
+
+Causal Inference is the process of determining whether one variable **causes** a change in another variable, rather than simply being associated with it.
+
+**Goal**
+
+To answer the question:
+
+> **Does X cause Y?**
+
+instead of
+
+> **Are X and Y just correlated?**
+
+### Example
+
+- **Correlation:** Ice cream sales and drowning cases both increase in summer.
+- **Causation:** Smoking increases the risk of lung cancer.
+
+### Common Methods
+
+- Randomized Controlled Trials (RCTs)
+- A/B Testing
+- Difference-in-Differences (DiD)
+- Instrumental Variables (IV)
+- Propensity Score Matching (PSM)
+- Regression Discontinuity Design (RDD)
+
+### Pros
+
+- Identifies cause-and-effect relationships.
+- Supports better decision-making.
+- Helps estimate the impact of interventions.
+
+### Cons
+
+- Difficult to prove causality using observational data.
+- Requires strong assumptions.
+- Can be affected by confounding variables.
+
+Convergence = The point where the model stops improving because it has found the best (or a stable) solution.
+
