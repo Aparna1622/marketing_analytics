@@ -736,5 +736,109 @@ instead of
 - Requires strong assumptions.
 - Can be affected by confounding variables.
 
-Convergence = The point where the model stops improving because it has found the best (or a stable) solution.
+Convergence = The point where the model stops improving because it has found the best (or a stable) solution.  
+
+# Bambi
+
+**Definition**
+
+Bambi is a Python library for building and fitting **Bayesian statistical models** using a simple formula syntax (similar to R's `lme4` and `statsmodels`).
+
+**Example**
+
+```python
+import bambi as bmb
+
+model = bmb.Model("y ~ x1 + x2", data=df)
+results = model.fit()
+```
+
+### Pros
+
+- Easy-to-use formula interface.
+- Supports Bayesian regression models.
+- Built on top of PyMC.
+
+### Cons
+
+- Slower than traditional regression methods.
+- Requires understanding of Bayesian statistics.
+
+---
+
+# ArviZ
+
+**Definition**
+
+ArviZ is a Python library used to **analyze, visualize, and diagnose Bayesian models**. It works with Bambi, PyMC, Stan, NumPyro, and other Bayesian frameworks.
+
+**Example**
+
+```python
+import arviz as az
+
+az.summary(results)
+az.plot_trace(results)
+```
+
+### Pros
+
+- Provides model diagnostics.
+- Creates high-quality Bayesian visualizations.
+- Supports multiple Bayesian libraries.
+
+### Cons
+
+- Mainly useful for Bayesian models.
+- Requires familiarity with Bayesian inference.
+
+Relationship between Bambi and ArviZ
+Bambi → Builds and fits Bayesian models.
+ArviZ → Analyzes and visualizes the results of those models.  
+
+# Bayesian Statistics
+
+**Definition**
+
+Bayesian Statistics is a branch of statistics that updates the probability of a hypothesis as new evidence or data becomes available.
+
+It combines **prior knowledge** with **observed data** to produce an updated belief called the **posterior probability**.
+
+### Bayes' Theorem
+
+```
+Posterior = (Likelihood × Prior) / Evidence
+```
+
+Or mathematically:
+
+```
+P(A|B) = [P(B|A) × P(A)] / P(B)
+```
+
+**Where**
+
+- P(A|B) = Posterior probability
+- P(B|A) = Likelihood
+- P(A) = Prior probability
+- P(B) = Evidence (marginal probability)
+
+### Components
+
+- **Prior**: Initial belief before seeing data.
+- **Likelihood**: Probability of observing the data given the hypothesis.
+- **Posterior**: Updated belief after observing the data.
+- **Evidence**: Normalizing constant.
+
+### Pros
+
+- Incorporates prior knowledge.
+- Updates beliefs as new data arrives.
+- Provides probability distributions instead of single estimates.
+
+### Cons
+
+- Choosing an appropriate prior can be difficult.
+- Computationally intensive for complex models.
+- Can be slower than frequentist methods.
 
