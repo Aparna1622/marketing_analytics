@@ -579,3 +579,56 @@ All too often, analysts just throw charts at the screen. But not all charts are 
  - First, Streamlit apps can be set up to reflect changes in real time when the underlying data changes. This means we can create live dashboars that update without user intervention or page refreshes.
  - Secondly, Streamlit is built for Python, making it seamless to integrate with Python's extensive ecosystem of data science libraries such as Pandas, Numpy, and Matplotlib, and machine learning(ML) frameworks such as TensorFlow and scikit-learn.
  - Finally, beyond predefined fileters and selections, Streamlit can take text input, file uploads, and other user-generated content to manipulate data or feed models on the fly, providing a more dynamic interaction model.
+
+# Econometrics and Causal Inference with Statsmodels and PyMC:  
+All models are wrong, but some are useful.  
+-- George Box  
+
+The differece between a model and an algorithm:  
+One should be aware of the fact that a model is not a algorithm. A model is an attempt to represent a phenomenon and the relations betweeen variables mathematically. An algorithm, however is a recipe, a collection of steps, or a set of rules to be followed to achieve a certain outcome. So, a linear regression is a model, but a method such as ordinary least squares is an algorithm that fits a linear regression to the data.  
+
+# Linear regression:  
+
+**Definition**
+
+Linear Regression is a supervised machine learning algorithm used to predict a continuous target variable by finding the best-fit linear relationship between the independent and dependent variables.
+
+### Formula
+
+```
+y = β₀ + β₁x
+```
+
+**Where**
+
+- y = Predicted (dependent) variable
+- x = Independent variable
+- β₀ = Intercept
+- β₁ = Slope (coefficient)
+
+### Pros
+
+- Simple and easy to interpret.
+- Fast to train.
+- Works well for linear relationships.
+
+### Cons
+
+- Assumes a linear relationship.
+- Sensitive to outliers.
+- Performs poorly on non-linear data.
+
+# Assumptions of linear regression:  
+- The model will assume that the relationship between dependent and independent variables is linear in nature. This is a very strong assumption, and one might argue that you will most often deal with non-linear data in real life. However, even with a non-linear relationship, a linear regression might still be useful for estimating an average relationship.
+- Closely related with the linearity assumption is the additivity assumption. This means that the effect of each independent variable is independent of the other independent variable. When additivity is violated, it makes sense to transform the data. For example, if y=a*b*c, then we can transform the problem with:
+  log(y)=log(a)+log(b)+log(b)
+- A third assumption of the linear regressions is that the errors from the prediction line are independent from each other. This means that the error of one point does not effect the error of another point. This assumption is violated when you have time series data, or panel data, in a phenomenon called autocorrelation.
+- The equal variance of error is out fourth assumption. It is also known as homoscedasticity as opposed to heteroscedasticity, which means we do not have equal variance of errors. This assumption states that the variance of the error is the same for all values of the independent variables. This assumption is violated, for instance, when the relationship between the variables is not linear. While violation of the assumptiom cam be an issue, especially if the regression is to be used for probabilistic prediction., it does not affect the most important aspect of a regression model-how the information is combined and goes into the predictors.
+- Our next assumption regarding errors is that they are normally distributed. This assumption is relevant when predicting individual data points. On the other hand, when talking about estimating the regression line, this assumption is not relevant, in most cases. On the topic of the assumption of normality of errors, it is important to emphasize that the normality assumption is for the errors of the regression. The independent variables do not need to be normally distributed. In fact, most of the time, they will not be.
+- Finally, the last assumption to be wary(careful) of is the absence of multicollinearity. Thiis means that the independent variables are not highly correlated with each other. This assumption is violated when you have a lot of independent variables and some of them are highly correlated. This is a problem because it makes it difficult to estimate the regression coefficient.
+
+**Note:**  
+We have to keep in mind that the model is very sensitive to outliers. We need to handle outliers before running a linear regressions or the model will be biased.  
+
+The most common method to estimate a linear regression model is the OLS method. OLS stands for ordinary least squares, which refers to the way the statisical model fits to the data to produce the best-fit line. The best-fit line is the line that minimizes the sum of the squared errors. The errors are the difference between the actual value of the dependent variable and the predicted value of the dependent variable. The squared errors are used to avoid the errors cancelling each other out, when summing them.  
+
