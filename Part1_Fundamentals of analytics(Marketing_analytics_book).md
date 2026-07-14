@@ -836,9 +836,26 @@ P(A|B) = [P(B|A) × P(A)] / P(B)
 - Updates beliefs as new data arrives.
 - Provides probability distributions instead of single estimates.
 
+
+
 ### Cons
 
 - Choosing an appropriate prior can be difficult.
 - Computationally intensive for complex models.
 - Can be slower than frequentist methods.
 
+## Logistic regression:  
+It is a type of statistical analysis used to predict the outcome of a binary variable(such as "yes/no" or "0/1" outcomes) based on one or more predictor variables. This method applies the logistic function to estimate the probability of the binary response, with the possibility of being adapted for more complex situations. This technique is particularly useful for cases where the relationship between the independent variables and the dependent vvariable is not linear., which is often the case in the classification problems. In this model, the logit of the probability is modeled as a linear combination of the independent variables.  
+Logistic regression is also used to predict the probability of a customer purchase a product or service in the future. This is useful for targeting specific customers that are more likely to purchase a product.  
+In customer analysis, it is used to estimate the effect of one or more predictor variables on an outcome variable that is binary, such as acquisiton expansion and retention strategies, promotion and pricing strategies, and advertising campaigns.  
+
+# Objectives of logistic regression models:  
+Logistic regression is similar to standard regression model, but the dependent variable is binary. The objective of a logistic regression model is to estimate the probability of a custo mer belongs toa certian class based on the values of the independent variables. The independent variables can be either continuous or categorical. The variable of interest in logistic regression is a binary one, which is coded as 1 to represent outcomes such as "yes" or "success" and 0 to denote "no" or "failure". The model uses these binary outcomes to predict the probability that Y equals 1, based on the predictor variable X.  
+Logistic regression is commonly used in marketing to predict the probability of a customer buying a product or service in the future. Alternatively, it can be used to predict the probability of a customer churning or the probability of a customer upgrading or downgrading a product or service. It is also also used to predict the probability of a customer responding to a marketing campaign or offer.  
+
+The logistic regression model takes the form:  
+```
+p = 1 / (1 + e^-(β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ))
+```
+
+where e is the natural logarithm, and p is the probability of the event. The logistic regression model predicts P(Y=1) as function of X, and p will range from 0 to 1. When you have only one independent variable, the logistic regression model is equivalent to the logit function. 
