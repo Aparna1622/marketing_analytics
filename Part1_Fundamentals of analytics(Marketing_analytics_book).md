@@ -858,4 +858,43 @@ The logistic regression model takes the form:
 p = 1 / (1 + e^-(β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ))
 ```
 
-where e is the natural logarithm, and p is the probability of the event. The logistic regression model predicts P(Y=1) as function of X, and p will range from 0 to 1. When you have only one independent variable, the logistic regression model is equivalent to the logit function. 
+where e is the natural logarithm, and p is the probability of the event. The logistic regression model predicts P(Y=1) as function of X, and p will range from 0 to 1. When you have only one independent variable, the logistic regression model is equivalent to the logit function.  
+
+## Odds of an event:  
+```
+Odds = P(E) / (1 - P(E))
+```
+
+**Where**
+
+- P(E) = Probability of the event occurring
+- 1 − P(E) = Probability of the event not occurring
+This describes the outcome as the odds of the event happening. p is still the probability of an event happening. Probabilities and odds are often used interchangeably, but they were not the same. Odds are the ratio of the probability of an event happening compared to the probability of the event not happening. Probability ranges are always between 0 and 1 and capture the ratio of how often an event of interest occurs. Odds, on the other hand, can range from 0 to infinity and the capture the ratio of how often an event of interest occurs over how often it does not occur.
+
+**Relation between probability and odds:**  
+### Probability to Odds
+
+```
+Odds = P / (1 - P)
+```
+
+### Odds to Probability
+
+```
+P = Odds / (1 + Odds)
+
+Logistic regression will also provide the odds ratio for each predictor variable x. The odds ratio captures the increase in the odds of the occurence of the event a sthe focal predictor variable x increases by one unit, while holding all other variables constant. This is done by multiplying the odds by the odds ratio.
+The odds ration for a predictor, say x1, is calculated as:
+OR(x₁) = e^β₁
+where β₁ is the coefficient for x1 in the logistic regression equation.
+The interpretation is simple:
+OR(x₁)=1: This indicates that the event's odds are the same regardless of the value of x1. In other words, x1 has no effect on the likelihood of the event occuring.
+OR(x₁)>1: An OR(x₁) greater than 1 suggests that as x1 increases, the odds of the event occuring also increases. For example, if OR(x₁)=2, it means that the odds of the event happening are twice as high for each one-unit increase in x1. This indicates a positive relationship between x1 and the likelihood of the event.
+OR(x₁)<1: Conversely, an OR(x₁) less than 1 indicates that as x1 increases, the odds of the event occuring decrease. For example, if OR(x₁)=0.5, it means that the odds of the event are halved for each unit increase in x1. This signifies a negative relationship between x1 and the event's likelihood.  
+
+# Correlation and Causation:
+Correlation does not imply causation.
+
+Correlation is the statistical measure of the relationship between two variables. Causation is the relationship between two variables where one variable causes the other. The two are not the same.
+
+
