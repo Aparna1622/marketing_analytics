@@ -953,3 +953,48 @@ Cov(X, ε) ≠ 0
 - Invalid hypothesis tests and predictions.
 
 This is a very common scenario in the real world. The key is to identify the common cause and use it as a predictor in your model. This is called omitted variable bias.  
+
+# Directed Acyclic Graph (DAG)
+
+**Definition**
+
+A Directed Acyclic Graph (DAG) is a graph made up of **nodes** and **directed edges (arrows)** with **no cycles**. It is commonly used to represent **causal relationships** between variables.
+
+### Components
+
+- **Node** → A variable or event.
+- **Directed Edge (→)** → Indicates the direction of influence or causation.
+- **Acyclic** → No path leads back to the same node.
+
+### Example
+
+```
+Smoking ───▶ Lung Cancer
+      │
+      ▼
+Heart Disease
+```
+
+This means:
+
+- Smoking causes Lung Cancer.
+- Smoking also causes Heart Disease.
+
+### Uses
+
+- Causal inference
+- Bayesian networks
+- Machine learning
+- Workflow and dependency modeling
+
+### Pros
+
+- Clearly represents cause-and-effect relationships.
+- Helps identify confounding variables.
+- Useful for causal analysis and decision-making.
+
+### Cons
+
+- Requires correct domain knowledge.
+- Cannot represent cyclic relationships.
+- Incorrect DAGs can lead to incorrect conclusions.
