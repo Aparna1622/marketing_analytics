@@ -883,6 +883,8 @@ Odds = P / (1 - P)
 ```
 P = Odds / (1 + Odds)
 
+```
+
 Logistic regression will also provide the odds ratio for each predictor variable x. The odds ratio captures the increase in the odds of the occurence of the event a sthe focal predictor variable x increases by one unit, while holding all other variables constant. This is done by multiplying the odds by the odds ratio.
 The odds ration for a predictor, say x1, is calculated as:
 OR(x₁) = e^β₁
@@ -897,4 +899,4 @@ Correlation does not imply causation.
 
 Correlation is the statistical measure of the relationship between two variables. Causation is the relationship between two variables where one variable causes the other. The two are not the same.
 
-
+Correlation does not imply causation, but it can be very strong indicator of causation. The reason for this is that correlation is a measure of the strenght of the relationship between two variables. If two variables are correlated, it means that they are related. If they are related, it is very likely that one variable is causing the other. The only way to know for sure is to perform an experiment and control for all other variables. This is the only way to know for sure that one variable is causing the other. But in the real world, we dont have the luxury of performing experiment. We need to use the data we have to infer causation. And the best way to do this is to use a linear regression model.   
