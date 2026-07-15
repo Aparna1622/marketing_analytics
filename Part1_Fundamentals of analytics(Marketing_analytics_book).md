@@ -900,3 +900,56 @@ Correlation does not imply causation.
 Correlation is the statistical measure of the relationship between two variables. Causation is the relationship between two variables where one variable causes the other. The two are not the same.
 
 Correlation does not imply causation, but it can be very strong indicator of causation. The reason for this is that correlation is a measure of the strenght of the relationship between two variables. If two variables are correlated, it means that they are related. If they are related, it is very likely that one variable is causing the other. The only way to know for sure is to perform an experiment and control for all other variables. This is the only way to know for sure that one variable is causing the other. But in the real world, we dont have the luxury of performing experiment. We need to use the data we have to infer causation. And the best way to do this is to use a linear regression model.   
+
+# Exogeneity
+
+**Definition**
+
+Exogeneity means that the independent variable (**X**) is **not correlated** with the error term (**ε**).
+
+### Formula
+
+```
+Cov(X, ε) = 0
+```
+
+### Pros
+
+- Produces unbiased and consistent estimates.
+- Valid statistical inference.
+
+### Cons
+
+- Strong assumption.
+- Difficult to verify in real-world data.
+
+---
+
+# Endogeneity
+
+**Definition**
+
+Endogeneity occurs when the independent variable (**X**) is **correlated** with the error term (**ε**), leading to biased and inconsistent estimates.
+
+### Formula
+
+```
+Cov(X, ε) ≠ 0
+```
+
+### Common Causes
+
+- Omitted variable bias
+- Measurement error
+- Simultaneous causality (reverse causation)
+
+### Pros
+
+- Helps identify issues in regression models.
+
+### Cons
+
+- Produces biased coefficients.
+- Invalid hypothesis tests and predictions.
+
+This is a very common scenario in the real world. The key is to identify the common cause and use it as a predictor in your model. This is called omitted variable bias.  
