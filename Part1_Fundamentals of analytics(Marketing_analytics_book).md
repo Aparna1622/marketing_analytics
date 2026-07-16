@@ -540,11 +540,11 @@ These dashboards will help the user track their strategic decisions by tracking 
 # Designing concepts of a dashboard:  
 When thinking about a dashboard design, it is helpful to consider the exercise as if you were designing a product for consumers. In doing so, you should ask yourself what your target audience is and what they care about.  
 
-# Understanding your audience is key:  
--- Are you talking to the operational side of the business, who need key metrics but a degree of detail to quickly make changes to a maketing campaign on their weekly reviews?
+# Understanding your audience is key:   
+-- Are you talking to the operational side of the business, who need key metrics but a degree of detail to quickly make changes to a maketing campaign on their weekly reviews?  
 -- Or are you talking to management, who do not need, nor have time for, the nitty-gritty details but need a more bird's-eye view(top down perspective from a high angle, like a bird sees the world) to make quarterly resource allocation of the budge?  
 
-When creating dashboards for marketing analytics, several key heuristics can guide your desing process and ensure the effectiveness of the visualizations. Some of the principles in designing a dashabord are listed below:  
+When creating dashboards for marketing analytics, several key heuristics can guide your design process and ensure the effectiveness of the visualizations. Some of the principles in designing a dashabord are listed below:  
 **1. Define the purpose**  
 **2. Prioritize important information**  
 **3. Optimize data-ink ratio:**  
@@ -564,10 +564,10 @@ Remember that dashboards are designed for people. While adhering to best practic
 Regularly evaluate and evolve your dashboards to ensure they are driving the desired behaviors and delivering actionable insights.  
 
 ## Thinking about how to best represent data:  
-All too often, analysts just throw charts at the screen. But not all charts are born equal. Each chart serves a purpose, given the information you intend to convey. There are four main categories in charts:  
-**Understanding relationships**
-**Comparing categories or timeframes**
-**Seeing the composition of the data**
+All too often, analysts just throw charts at the screen. But not all charts are born equal. Each chart serves a purpose, given the information you intend to convey. There are four main categories in charts:   
+**Understanding relationships**  
+**Comparing categories or timeframes**  
+**Seeing the composition of the data**  
 **Seeing the distribution or shape of the data**  
 
 **An overview of the chart types. Each chart has a purpose**
@@ -575,10 +575,10 @@ All too often, analysts just throw charts at the screen. But not all charts are 
 <img width="402" height="216" alt="image" src="https://github.com/user-attachments/assets/37b6e13e-f826-47d6-892a-de90290624ce" />  
 
  # Streamlit:  
- There are increasing limitations to dashboards. They are, by their very nature, statis. Streamlit allows us to move into building dynamic data apps in a way that the user can interact with data in a manner not possible with a dashboard. Three reasons stand out when evaluating Streamlit.  
+ There are increasing limitations to dashboards. They are, by their very nature, static. Streamlit allows us to move into building dynamic data apps in a way that the user can interact with data in a manner not possible with a dashboard. Three reasons stand out when evaluating Streamlit.  
  - First, Streamlit apps can be set up to reflect changes in real time when the underlying data changes. This means we can create live dashboars that update without user intervention or page refreshes.
  - Secondly, Streamlit is built for Python, making it seamless to integrate with Python's extensive ecosystem of data science libraries such as Pandas, Numpy, and Matplotlib, and machine learning(ML) frameworks such as TensorFlow and scikit-learn.
- - Finally, beyond predefined fileters and selections, Streamlit can take text input, file uploads, and other user-generated content to manipulate data or feed models on the fly, providing a more dynamic interaction model.
+ - Finally, beyond predefined filters and selections, Streamlit can take text input, file uploads, and other user-generated content to manipulate data or feed models on the fly, providing a more dynamic interaction model.
 
 # Econometrics and Causal Inference with Statsmodels and PyMC:  
 All models are wrong, but some are useful.  
@@ -620,12 +620,12 @@ y = β₀ + β₁x
 
 # Assumptions of linear regression:  
 - The model will assume that the relationship between dependent and independent variables is linear in nature. This is a very strong assumption, and one might argue that you will most often deal with non-linear data in real life. However, even with a non-linear relationship, a linear regression might still be useful for estimating an average relationship.
-- Closely related with the linearity assumption is the additivity assumption. This means that the effect of each independent variable is independent of the other independent variable. When additivity is violated, it makes sense to transform the data. For example, if y=a*b*c, then we can transform the problem with:
-  log(y)=log(a)+log(b)+log(b)
+- Closely related with the linearity assumption is the additivity assumption. This means that the effect of each independent variable is independent of the other independent variables. When additivity is violated, it makes sense to transform the data. For example, if y=a*b*c, then we can transform the problem with:
+  log(y)=log(a)+log(b)+log(c)
 - A third assumption of the linear regressions is that the errors from the prediction line are independent from each other. This means that the error of one point does not effect the error of another point. This assumption is violated when you have time series data, or panel data, in a phenomenon called autocorrelation.
-- The equal variance of error is out fourth assumption. It is also known as homoscedasticity as opposed to heteroscedasticity, which means we do not have equal variance of errors. This assumption states that the variance of the error is the same for all values of the independent variables. This assumption is violated, for instance, when the relationship between the variables is not linear. While violation of the assumptiom cam be an issue, especially if the regression is to be used for probabilistic prediction., it does not affect the most important aspect of a regression model-how the information is combined and goes into the predictors.
+- The equal variance of error is our fourth assumption. It is also known as homoscedasticity as opposed to heteroscedasticity, which means we do not have equal variance of errors. This assumption states that the variance of the error is the same for all values of the independent variables. This assumption is violated, for instance, when the relationship between the variables is not linear. While violation of the assumption can be an issue, especially if the regression is to be used for probabilistic prediction., it does not affect the most important aspect of a regression model-how the information is combined and goes into the predictors.
 - Our next assumption regarding errors is that they are normally distributed. This assumption is relevant when predicting individual data points. On the other hand, when talking about estimating the regression line, this assumption is not relevant, in most cases. On the topic of the assumption of normality of errors, it is important to emphasize that the normality assumption is for the errors of the regression. The independent variables do not need to be normally distributed. In fact, most of the time, they will not be.
-- Finally, the last assumption to be wary(careful) of is the absence of multicollinearity. Thiis means that the independent variables are not highly correlated with each other. This assumption is violated when you have a lot of independent variables and some of them are highly correlated. This is a problem because it makes it difficult to estimate the regression coefficient.
+- Finally, the last assumption to be wary(careful) of is the absence of multicollinearity. This means that the independent variables are not highly correlated with each other. This assumption is violated when you have a lot of independent variables and some of them are highly correlated. This is a problem because it makes it difficult to estimate the regression coefficient.
 
 **Note:**  
 We have to keep in mind that the model is very sensitive to outliers. We need to handle outliers before running a linear regressions or the model will be biased.  
@@ -635,12 +635,12 @@ The most common method to estimate a linear regression model is the OLS method. 
 **What we can do when assumptions break down:**  
 When faced with a breakdown in assumptions, there are some things we can go to mitigate the problem. One is extending the model, which relaxes the assumptions you are breaking.  
 * Obtaining the cleaner data
-* Adding predictors: Sometimes, adding predictors can provide more information, given that the new predictors are not correlated with the predictorss already in the model.
+* Adding predictors: Sometimes, adding predictors can provide more information, given that the new predictors are not correlated with the predictors already in the model.
 * Adding interactions to the model non-linearities: This is done easily by multiplying predictors together. For example, if we have a predictor x1, and a predictor x2, we can add the interaction x1*x2 to the model. This will alow the model to capture non-linearities between the predictors.
 * Variable transformation: We can attempt data transformations of either the predictors, the outcome, or both.
 
  # Interpreting the coefficient:  
- The coefficients of a linear regression are often called effects. The terminology can be misleading and lead an analyst astray. As mentioned, quantifying a coefficient as an effect, or worst, a causal effect, requrires a lot of assumptions to lead us to causal inference. When you interpret the coefficient as a cause, you are essentially saying, "if I increase the value of a independent variable by one unit, the effect will be an increase of $\beta$ units in the dependent variable". In reality, what the model is estimating is the average difference in the dataset of $\beta$ units. It is a between-data point comparison not a within-data point comparison. 
+ The coefficients of a linear regression are often called effects. The terminology can be misleading and lead an analyst astray. As mentioned, quantifying a coefficient as an effect, or worst, a causal effect, requires a lot of assumptions to lead us to causal inference. When you interpret the coefficient as a cause, you are essentially saying, "if I increase the value of a independent variable by one unit, the effect will be an increase of $\beta$ units in the dependent variable". In reality, what the model is estimating is the average difference in the dataset of $\beta$ units. It is a between-data point comparison not a within-data point comparison. 
 
 # Causal Inference
 
@@ -792,9 +792,9 @@ az.plot_trace(results)
 - Mainly useful for Bayesian models.
 - Requires familiarity with Bayesian inference.
 
-Relationship between Bambi and ArviZ
-Bambi → Builds and fits Bayesian models.
-ArviZ → Analyzes and visualizes the results of those models.  
+Relationship between Bambi and ArviZ  
+Bambi → Builds and fits Bayesian models.  
+ArviZ → Analyzes and visualizes the results of those models.   
 
 # Bayesian Statistics
 
@@ -845,12 +845,12 @@ P(A|B) = [P(B|A) × P(A)] / P(B)
 - Can be slower than frequentist methods.
 
 ## Logistic regression:  
-It is a type of statistical analysis used to predict the outcome of a binary variable(such as "yes/no" or "0/1" outcomes) based on one or more predictor variables. This method applies the logistic function to estimate the probability of the binary response, with the possibility of being adapted for more complex situations. This technique is particularly useful for cases where the relationship between the independent variables and the dependent vvariable is not linear., which is often the case in the classification problems. In this model, the logit of the probability is modeled as a linear combination of the independent variables.  
+It is a type of statistical analysis used to predict the outcome of a binary variable(such as "yes/no" or "0/1" outcomes) based on one or more predictor variables. This method applies the logistic function to estimate the probability of the binary response, with the possibility of being adapted for more complex situations. This technique is particularly useful for cases where the relationship between the independent variables and the dependent variable is not linear., which is often the case in the classification problems. In this model, the logit of the probability is modeled as a linear combination of the independent variables.  
 Logistic regression is also used to predict the probability of a customer purchase a product or service in the future. This is useful for targeting specific customers that are more likely to purchase a product.  
 In customer analysis, it is used to estimate the effect of one or more predictor variables on an outcome variable that is binary, such as acquisiton expansion and retention strategies, promotion and pricing strategies, and advertising campaigns.  
 
 # Objectives of logistic regression models:  
-Logistic regression is similar to standard regression model, but the dependent variable is binary. The objective of a logistic regression model is to estimate the probability of a custo mer belongs toa certian class based on the values of the independent variables. The independent variables can be either continuous or categorical. The variable of interest in logistic regression is a binary one, which is coded as 1 to represent outcomes such as "yes" or "success" and 0 to denote "no" or "failure". The model uses these binary outcomes to predict the probability that Y equals 1, based on the predictor variable X.  
+Logistic regression is similar to standard regression model, but the dependent variable is binary. The objective of a logistic regression model is to estimate the probability of a customer belongs to a certian class based on the values of the independent variables. The independent variables can be either continuous or categorical. The variable of interest in logistic regression is a binary one, which is coded as 1 to represent outcomes such as "yes" or "success" and 0 to denote "no" or "failure". The model uses these binary outcomes to predict the probability that Y equals 1, based on the predictor variable X.  
 Logistic regression is commonly used in marketing to predict the probability of a customer buying a product or service in the future. Alternatively, it can be used to predict the probability of a customer churning or the probability of a customer upgrading or downgrading a product or service. It is also also used to predict the probability of a customer responding to a marketing campaign or offer.  
 
 The logistic regression model takes the form:  
@@ -869,7 +869,7 @@ Odds = P(E) / (1 - P(E))
 
 - P(E) = Probability of the event occurring
 - 1 − P(E) = Probability of the event not occurring
-This describes the outcome as the odds of the event happening. p is still the probability of an event happening. Probabilities and odds are often used interchangeably, but they were not the same. Odds are the ratio of the probability of an event happening compared to the probability of the event not happening. Probability ranges are always between 0 and 1 and capture the ratio of how often an event of interest occurs. Odds, on the other hand, can range from 0 to infinity and the capture the ratio of how often an event of interest occurs over how often it does not occur.
+This describes the outcome as the odds of the event happening. p is still the probability of an event happening. Probabilities and odds are often used interchangeably, but they were not the same. Odds are the ratio of the probability of an event happening compared to the probability of the event not happening. Probability ranges are always between 0 and 1 and capture the ratio of how often an event of interest occurs. Odds, on the other hand, can range from 0 to infinity and they capture the ratio of how often an event of interest occurs over how often it does not occur.
 
 **Relation between probability and odds:**  
 ### Probability to Odds
@@ -885,21 +885,23 @@ P = Odds / (1 + Odds)
 
 ```
 
-Logistic regression will also provide the odds ratio for each predictor variable x. The odds ratio captures the increase in the odds of the occurence of the event a sthe focal predictor variable x increases by one unit, while holding all other variables constant. This is done by multiplying the odds by the odds ratio.
+Logistic regression will also provide the odds ratio for each predictor variable x. The odds ratio captures the increase in the odds of the occurence of the event as the focal predictor variable x increases by one unit, while holding all other variables constant. This is done by multiplying the odds by the odds ratio.
 The odds ration for a predictor, say x1, is calculated as:
 OR(x₁) = e^β₁
 where β₁ is the coefficient for x1 in the logistic regression equation.
-The interpretation is simple:
-OR(x₁)=1: This indicates that the event's odds are the same regardless of the value of x1. In other words, x1 has no effect on the likelihood of the event occuring.
-OR(x₁)>1: An OR(x₁) greater than 1 suggests that as x1 increases, the odds of the event occuring also increases. For example, if OR(x₁)=2, it means that the odds of the event happening are twice as high for each one-unit increase in x1. This indicates a positive relationship between x1 and the likelihood of the event.
-OR(x₁)<1: Conversely, an OR(x₁) less than 1 indicates that as x1 increases, the odds of the event occuring decrease. For example, if OR(x₁)=0.5, it means that the odds of the event are halved for each unit increase in x1. This signifies a negative relationship between x1 and the event's likelihood.  
+The interpretation is simple:  
+OR(x₁)=1: This indicates that the event's odds are the same regardless of the value of x1. In other words, x1 has no effect on the likelihood of the event occuring.  
+OR(x₁)>1: An OR(x₁) greater than 1 suggests that as x1 increases, the odds of the event occuring also increases.  
+OR(x₁)=2, it means that the odds of the event happening are twice as high for each one-unit increase in x1. This indicates a positive relationship between x1 and the likelihood of the event.  
+OR(x₁)<1: Conversely, an OR(x₁) less than 1 indicates that as x1 increases, the odds of the event occuring decrease.  
+OR(x₁)=0.5, it means that the odds of the event are halved for each unit increase in x1. This signifies a negative relationship between x1 and the event's likelihood.  
 
 # Correlation and Causation:
 Correlation does not imply causation.
 
 Correlation is the statistical measure of the relationship between two variables. Causation is the relationship between two variables where one variable causes the other. The two are not the same.
 
-Correlation does not imply causation, but it can be very strong indicator of causation. The reason for this is that correlation is a measure of the strenght of the relationship between two variables. If two variables are correlated, it means that they are related. If they are related, it is very likely that one variable is causing the other. The only way to know for sure is to perform an experiment and control for all other variables. This is the only way to know for sure that one variable is causing the other. But in the real world, we dont have the luxury of performing experiment. We need to use the data we have to infer causation. And the best way to do this is to use a linear regression model.   
+Correlation does not imply causation, but it can be very strong indicator of causation. The reason for this is that correlation is a measure of the strength of the relationship between two variables. If two variables are correlated, it means that they are related. If they are related, it is very likely that one variable is causing the other. The only way to know for sure is to perform an experiment and control for all other variables. This is the only way to know for sure that one variable is causing the other. But in the real world, we dont have the luxury of performing experiment. We need to use the data we have to infer causation. And the best way to do this is to use a linear regression model.   
 
 # Exogeneity
 
