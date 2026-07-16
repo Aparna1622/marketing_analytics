@@ -896,6 +896,9 @@ OR(x₁)=2, it means that the odds of the event happening are twice as high for 
 OR(x₁)<1: Conversely, an OR(x₁) less than 1 indicates that as x1 increases, the odds of the event occuring decrease.  
 OR(x₁)=0.5, it means that the odds of the event are halved for each unit increase in x1. This signifies a negative relationship between x1 and the event's likelihood.  
 
+## Read this for logistic regression explanation  
+https://www.geeksforgeeks.org/machine-learning/understanding-logistic-regression/
+
 # Correlation and Causation:
 Correlation does not imply causation.
 
