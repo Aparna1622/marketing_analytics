@@ -50,6 +50,43 @@ can model them accordingly. We can do this by using the get_dummies() function.
 **3.Visualize trend, seasonality, and cyclic behavior:**  
 If cyclic behavior is present, we need to decompose the time series. Be mindful of the distinction between seasonality and cyclic behaviours.
 Seasonality is perodic behavior that repeats itself every year, month, week, day and so on. Cyclic behavior is non-periodic that repeats itself
-every few years. We can do this by using the seasonal_decompose() function. 
+every few years. We can do this by using the seasonal_decompose() function.  
+
+# Seasonal Trend Decomposition using LOESS (STL)
+
+**Definition**
+
+Seasonal Trend Decomposition using LOESS (STL) is a time series decomposition method that separates a time series into **Trend**, **Seasonal**, and **Residual** components using **LOESS (Locally Estimated Scatterplot Smoothing)**.
+
+### Formula
+
+```
+Y(t) = T(t) + S(t) + R(t)
+```
+
+**Where**
+
+- Y(t) = Original time series
+- T(t) = Trend component
+- S(t) = Seasonal component
+- R(t) = Residual (remainder) component
+
+### Components
+
+- **Trend** → Long-term movement in the data.
+- **Seasonality** → Repeating patterns over fixed intervals.
+- **Residual** → Random noise after removing trend and seasonality.
+
+### Pros
+
+- Handles complex seasonal patterns.
+- Robust to outliers.
+- Flexible and widely used for time series analysis.
+
+### Cons
+
+- Computationally slower than simple decomposition.
+- Requires choosing an appropriate seasonal period.
+- Primarily designed for additive decomposition.
  
 
