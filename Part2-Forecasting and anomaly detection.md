@@ -89,4 +89,40 @@ Y(t) = T(t) + S(t) + R(t)
 - Requires choosing an appropriate seasonal period.
 - Primarily designed for additive decomposition.
  
+# Simulation
 
+**Definition**
+
+Simulation is the process of creating a model of a real-world system and running experiments on it to study its behavior under different conditions.
+
+### Steps
+
+1. Build a model.
+2. Generate input values.
+3. Run the simulation.
+4. Analyze the results.
+
+### Example
+
+Simulating the roll of a dice **10,000 times** to estimate the probability of getting a **6**.
+
+### Applications
+
+- Risk analysis
+- Forecasting
+- Machine learning
+- Finance
+- Healthcare
+- Supply chain optimization
+
+### Pros
+
+- Helps analyze complex systems.
+- Reduces the cost of real-world experiments.
+- Supports decision-making under uncertainty.
+
+### Cons
+
+- Results depend on model assumptions.
+- Can be computationally expensive.
+- May not perfectly represent real-world behavior.
