@@ -126,3 +126,53 @@ Simulating the roll of a dice **10,000 times** to estimate the probability of ge
 - Results depend on model assumptions.
 - Can be computationally expensive.
 - May not perfectly represent real-world behavior.
+
+# ETS Model (Error, Trend, Seasonal)
+
+**Definition**
+
+ETS (Error, Trend, Seasonal) is a time series forecasting model that decomposes a time series into **Error**, **Trend**, and **Seasonal** components using exponential smoothing.
+
+### Formula
+
+```
+Observed Value = Error + Trend + Seasonal
+```
+
+or
+
+```
+Y(t) = E(t) + T(t) + S(t)
+```
+
+**Where**
+
+- Y(t) = Observed time series
+- E(t) = Error component
+- T(t) = Trend component
+- S(t) = Seasonal component
+
+### Components
+
+- **Error (E)** → Random variation or noise.
+- **Trend (T)** → Long-term increase or decrease.
+- **Seasonal (S)** → Repeating pattern over time.
+
+### Common ETS Models
+
+- ETS(A, N, N) → Additive Error, No Trend, No Seasonality
+- ETS(A, A, N) → Additive Error, Additive Trend
+- ETS(A, A, A) → Additive Error, Additive Trend, Additive Seasonality
+- ETS(M, A, M) → Multiplicative Error, Additive Trend, Multiplicative Seasonality
+
+### Pros
+
+- Handles trend and seasonality effectively.
+- Simple and interpretable.
+- Works well for many forecasting problems.
+
+### Cons
+
+- Assumes historical patterns continue.
+- Less effective for highly irregular data.
+- Not suitable for data with sudden structural changes.
