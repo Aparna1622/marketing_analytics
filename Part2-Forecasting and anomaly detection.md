@@ -176,3 +176,51 @@ Y(t) = E(t) + T(t) + S(t)
 - Assumes historical patterns continue.
 - Less effective for highly irregular data.
 - Not suitable for data with sudden structural changes.
+
+## What type of patterns are present?  
+When forecasting, we need to be aware of the type of patterns present in the time series data. This will determine the type of model we will use. Commonly, time series data is described as having trends and seasonality.  
+
+**Trend:**  
+A trend is the general direction of the time series. It can be either positive or negative. It can also be constant or it can change over time, for example, a positive trend might change to a negative trend. The trend can be linear, non-linear, multiplicative or additive.  
+
+**Seasonality:**  
+Seasonality is a behavior or pattern that is caused or repeated given some seasonal factor, such as the time of the year or the day of the week. One thing to note is that seasonality is always fixed and of a known period. For example, the period of a year is 12 months, and the period of a week is 7 days, which will correspond to the monthly and weekly seasonality periods respectively. A major source of confusion is when people use seasonality to describe cyclic behavior.  
+
+**Cyclic behavior:**  
+A cycle is a behavior or pattern that repeats itself, but the period is not fixed. The reason the period is not fixed is usually due to the influence of an external factor. The most known cycle is the business cycle, caused by economic factors. Another example is cycles induced by competitor activities. In general, cycles are longer than seasonal effects, taking years to complete instead of months or weeks. It is possible to break time series into these patterns, known as time series decomposition.  
+
+**Time series decomposition:**  
+This is a method of breaking a time series dataset into components. Usually, the trend and cyclic components are grouped together, and most statitiscal packages will ouutput this as a single component called a trend. We will also have seasonal component. What remains is the residual, which is the noise of the time series. It is essentially the movement from the time series data, we are not limited to just one seasonal component. A time series can have multiple seasonal components, for example, a time series can have a weekly and a monthly seasonal component.  
+When breaking down a time series into its basic elements, we can use two appoaches: additive or multiplicative decomposition. With an additive model, we simply add the trend, seasonal and residual components to reconstruct the time series. This implies that the impact of trend and seasonality does not change over time.  
+On the other hand, a multiplication model assumes that the time series is a result of multiplying the trend, seasonal, and residual components. Here, the effect of the trend and the seasonaliy increases or decreases in direct proportion of the data. So, as the data grows,the influence similarly reduces. This approach is often more appropriate when the seasonal pattern intensify as the time series value rises.  
+If we are taking an additive decomposition, the time series can be written as:  
+
+# ETS Model Formulas
+
+## Additive Model
+
+```
+Y(t) = T(t) + S(t) + E(t)
+```
+
+**Where**
+
+- Y(t) = Observed value at time t
+- T(t) = Trend component
+- S(t) = Seasonal component
+- E(t) = Error (random noise)
+
+---
+
+## Multiplicative Model
+
+```
+Y(t) = T(t) × S(t) × E(t)
+```
+
+**Where**
+
+- Y(t) = Observed value at time t
+- T(t) = Trend component
+- S(t) = Seasonal component
+- E(t) = Error (random noise)
