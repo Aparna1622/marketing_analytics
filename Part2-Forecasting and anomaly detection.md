@@ -315,15 +315,19 @@ def autocorr(y, k):
     num = np.sum((y[k:] - y_bar) * (y[:-k] - y_bar)) if k > 0 else denom
 
     return num / denom
+```
 
 In the context of marketing analytics, understanding the dynamics of time series data is pivotal for accurate forecasting and strategic decision-making. A core concept in this arena is the analysis of autocorrelation features, which serve as a compass for navigating the temporal relationships within marketing datasets.
-
-Autocorrelation coefficients, denoted as rk, measure the linear relationship between time-lagged observations within a dataset. These coefficients range from -1 to +1, where:
-
+Autocorrelation coefficients, denoted as $r_k$, measure the linear relationship between time-lagged observations within a dataset. These coefficients range from -1 to +1, where:  
 - A value of +1 signifies a perfect positive correlation, indicating that an increase in one observation directly correlates with an increase in another, separated by a specific lag.
 - A value of -1 denotes a perfect negative correlation, suggesting that an increase in one observation corresponds to a decrease in another across the given lag.
 - A coefficient near 0 implies a lack of a linear relationship between the observations at the specified lag.
 
----
-
-# Important
+**Important autocorrelation features:**  
+1. Initial observation correlation(x_acf1): This represents the immediate linear relationship between successive observations.
+2. Collective influence(x_acf10): This aggregates the squared autocorrelation coefficients for the first ten lags, offering insight into the overall temporal dependency. Elevated values suggest pronounced autocorrealation, implying the historical data significantly influences future outcomes.
+3. Trend identification through differencing(diff1_acf1): This applies to once-differentiated data, highlighting trends or non-stationarities. Negative values suggest inverse relationships between consecutive changes, indicative of possible market corrections or overreactions.
+4. Pattern strenghth in changes(diff1_acf10): This summarizes the squared autocorrelation of the first difference. Higher totals reveal stronger autocorrelated structures post-differencing, suggesting underlying trends or cycles.
+5. Complex dynamic detection(diff2_acf1): This focuses on twice-differentiated data uncovering more intricate patterns that may include seasonal trends or deeper cyclical behaviors.
+6. Underlying structure in second difference(diff2_acf10): This is similar to diff1_acf10 but for the second differences, indicating even more complex temporal relationships that may necessitate advanced modeling techniques.
+7. Seasonal influence(Seasonal ACF): This examines the autocorrelation at specific seasonal lags, with values close to the extemities indicating significant seasonal effects. 
