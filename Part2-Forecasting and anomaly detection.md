@@ -224,3 +224,106 @@ Y(t) = T(t) × S(t) × E(t)
 - T(t) = Trend component
 - S(t) = Seasonal component
 - E(t) = Error (random noise)
+
+# STL Decomposition (Seasonal and Trend decomposition using Loess)
+
+**STL** is a robust, versatile statistical method used to decompose a time series dataset into three underlying components:
+
+$$Y_t = T_t + S_t + R_t$$
+
+* **$Y_t$ (Observed Data):** The raw time series value at time $t$.
+* **$T_t$ (Trend-Cycle Component):** Long-term directional changes or structural shifts in the data.
+* **$S_t$ (Seasonal Component):** Patterns that repeat over a fixed interval (e.g., daily, monthly, annually).
+* **$R_t$ (Remainder/Residual):** Random noise or unexpected fluctuations left over after removing trend and seasonality.
+
+---
+
+## Key Characteristics
+
+Unlike classical decomposition methods, STL relies on **LOESS** (Locally Estimated Scatterplot Smoothing), a non-parametric regression technique that fits local polynomials to localized subsets of data.
+
+* **Flexible Seasonality:** Allows seasonal patterns to change over time (e.g., peak demand shifting slightly every year) rather than assuming a strictly fixed shape.
+* **Robustness to Outliers:** Employs an outer-loop mechanism using robust weights, preventing anomalous spikes or drops from warping the estimated trend and seasonal components.
+* **Controllable Smoothness:** Parameters like the seasonal window size (`s.window`) and trend window size (`t.window`) give precise control over how rapidly components adapt.
+
+---
+
+## How the STL Algorithm Works
+
+STL operates via two main recursive loops: an **Inner Loop** and an **Outer Loop**.  
+
+## Time series Features:  
+These are essential characteristics extracted from time series data that capture underlying patterns, trends, and relationships within the data. These features provide valuable insights and diagnostics, improve forecasting accuracy, and help identify anomalies and events in the time series. we can think of these features as a form of exploratory data analysis on time series.  
+
+**ACF Features:**  
+The first group of features are autocorrelation features. In the same way as correlation will measure how two variables move together in a linear fashion, autocorrelation will measure how observations move together given lagged values of the time series. For example, if we have a time series of daily sales and we want to know how the sales today are correlated with the sales yesterday, we can calculate the autocorrelation at lag 1. If we want to know how the sales today are correlated with the sales two days ago, we can calculate the autocorrelation at lag2, and so on.  
+
+# Autocorrelation Coefficient Formula
+
+The **autocorrelation coefficient** measures the linear relationship between a time series variable and a lagged version of itself at lag $k$.
+
+---
+
+## Population Autocorrelation Formula
+
+For a stationary time series $Y$, the theoretical autocorrelation coefficient at lag $k$ (denoted as $\rho_k$) is defined as:
+
+$$\rho_k = \frac{\gamma_k}{\gamma_0} = \frac{\operatorname{Cov}(Y_t, Y_{t-k})}{\operatorname{Var}(Y_t)}$$
+
+Expanding the covariance and variance terms:
+
+$$\rho_k = \frac{\mathbb{E}[(Y_t - \mu)(Y_{t-k} - \mu)]}{\mathbb{E}[(Y_t - \mu)^2]}$$
+
+Where:
+* **$k$** is the time lag ($k = 0, 1, 2, \dots$).
+* **$\mu$** is the mean of the time series ($\mathbb{E}[Y_t]$).
+* **$\gamma_k$** is the autocovariance at lag $k$.
+* **$\gamma_0$** is the variance of the time series (the autocovariance at lag $0$).
+
+---
+
+## Sample Autocorrelation Formula
+
+In practice, given an observed sample time series $y_1, y_2, \dots, y_n$ with sample mean $\bar{y}$, the sample autocorrelation coefficient $r_k$ (or $\hat{\rho}_k$) is calculated as:
+
+$$r_k = \frac{\sum_{t=k+1}^{n} (y_t - \bar{y})(y_{t-k} - \bar{y})}{\sum_{t=1}^{n} (y_t - \bar{y})^2}$$
+
+Where:
+* **$n$** is the total number of observations.
+* **$\bar{y}$** is the sample mean: $\bar{y} = \frac{1}{n} \sum_{t=1}^{n} y_t$.
+* **$r_k$** ranges from **$-1$** (perfect negative correlation) to **$+1$** (perfect positive correlation).
+* At **$k = 0$**, $r_0 = 1$ because a series is perfectly correlated with itself.
+
+---
+
+## Python Implementation Example
+
+```python
+import numpy as np
+
+
+def autocorr(y, k):
+    """Calculates the sample autocorrelation coefficient for a given lag k."""
+    y = np.asarray(y)
+    n = len(y)
+    y_bar = np.mean(y)
+
+    # Denominator: sample variance sum
+    denom = np.sum((y - y_bar) ** 2)
+
+    # Numerator: covariance sum at lag k
+    num = np.sum((y[k:] - y_bar) * (y[:-k] - y_bar)) if k > 0 else denom
+
+    return num / denom
+
+In the context of marketing analytics, understanding the dynamics of time series data is pivotal for accurate forecasting and strategic decision-making. A core concept in this arena is the analysis of autocorrelation features, which serve as a compass for navigating the temporal relationships within marketing datasets.
+
+Autocorrelation coefficients, denoted as rk, measure the linear relationship between time-lagged observations within a dataset. These coefficients range from -1 to +1, where:
+
+- A value of +1 signifies a perfect positive correlation, indicating that an increase in one observation directly correlates with an increase in another, separated by a specific lag.
+- A value of -1 denotes a perfect negative correlation, suggesting that an increase in one observation corresponds to a decrease in another across the given lag.
+- A coefficient near 0 implies a lack of a linear relationship between the observations at the specified lag.
+
+---
+
+# Important
