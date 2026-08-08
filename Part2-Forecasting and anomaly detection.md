@@ -330,4 +330,12 @@ Autocorrelation coefficients, denoted as $r_k$, measure the linear relationship 
 4. Pattern strenghth in changes(diff1_acf10): This summarizes the squared autocorrelation of the first difference. Higher totals reveal stronger autocorrelated structures post-differencing, suggesting underlying trends or cycles.
 5. Complex dynamic detection(diff2_acf1): This focuses on twice-differentiated data uncovering more intricate patterns that may include seasonal trends or deeper cyclical behaviors.
 6. Underlying structure in second difference(diff2_acf10): This is similar to diff1_acf10 but for the second differences, indicating even more complex temporal relationships that may necessitate advanced modeling techniques.
-7. Seasonal influence(Seasonal ACF): This examines the autocorrelation at specific seasonal lags, with values close to the extemities indicating significant seasonal effects. 
+7. Seasonal influence(Seasonal ACF): This examines the autocorrelation at specific seasonal lags, with values close to the extemities indicating significant seasonal effects.
+
+## Basics of time series forecasting:  
+**1. Data cleaning and preparation**  
+**2. Plotting the time series and some Exploratory data analysis**  
+**3. Defining the model**  
+**4. Fitting the model**  
+**5. Evaluating the model**  
+**6. Forecasting**
