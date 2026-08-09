@@ -338,4 +338,202 @@ Autocorrelation coefficients, denoted as $r_k$, measure the linear relationship 
 **3. Defining the model**  
 **4. Fitting the model**  
 **5. Evaluating the model**  
-**6. Forecasting**
+**6. Forecasting**  
+
+# Multicollinearity
+
+**Definition**
+
+Multicollinearity occurs when two or more independent variables in a regression model are highly correlated with each other.
+
+### Example
+
+```
+X₁ = Years of Experience
+X₂ = Age
+```
+
+If experience and age are highly correlated, the model may have multicollinearity.
+
+### Formula
+
+Variance Inflation Factor (VIF):
+
+```text
+VIF = 1 / (1 - R²)
+```
+
+**Where**
+
+- R² = R-squared obtained by regressing one independent variable against the other independent variables.
+
+### Effects
+
+- Makes coefficient estimates unstable.
+- Increases standard errors.
+- Makes it difficult to determine the individual effect of each predictor.
+
+### Detection
+
+- Correlation Matrix
+- VIF (Variance Inflation Factor)
+
+### Common Rule of Thumb
+
+```text
+VIF > 5  → Possible multicollinearity
+VIF > 10 → High multicollinearity
+```
+
+# Holdout Method in Time Series
+
+**Definition**
+
+The Holdout Method is a time series validation technique where the data is divided **chronologically** into a training set and a test set.
+
+### Example
+
+```text
+Training Data → Jan 2020 to Dec 2023
+Test Data     → Jan 2024 to Dec 2024
+```
+
+The model is trained on the **training data** and evaluated on the **test data**.
+
+### Key Point
+
+```text
+Past Data → Training Set → Model
+Future Data → Test Set → Evaluation
+```
+
+The data should **not be randomly shuffled**, because time series data depends on the order of time.  
+
+ ## Variable selection in time series regression models:  
+ Variable selection in time series models is a crucial step in refining your predictions. The essence of this task lies in identifying which predictors(or features) provide valuable information for forecasting the target variable. The overall goal is to include features that improve the model's performance while excluding those that may make it overly complex without providing additional forecasting value.  
+ There are several strategies for the variable selection, two of which will be discussed here: Cross validation and the use of information criteria metrics.  
+
+ **Cross validation**
+ The simplest way to select variables is to use cross-validation. This is a method that is commonly used in machine learning to select the best model. In essence, it is a more developed version of the holdout method. In the holdout method, we split the data into two sets: a training set and a test set. You fit the model on the training set and evaluate it on the test set. The problem with this method is that we are only using a fraction of the data to fit the model. This means that you are not using all the information in the data to fit the model. This is why cross-validation is a better method. In cross-validation, we split the data into k folds. We fit the model on k-1 folds and evaluate it on the remaining folds. We repeat this process k times, using a different fold as the test set every time. The final score is the average of k scores. This method is more robust because you are using all the data to fit the model and we are not overfitting the model to a specific fold. Now, the splits in time series cannot be random. We need to make sure that the folds are contiguous in time. This is because the data is not independent. The data is dependent on the previous observations. If we split the data randomly, we will be introducing a bias in the model. Most commonly, we will split the model between a test set of one observation and a training set of all the previous observations. For each k fold, we move it one observation forward. This is called a rolling window. We repeat this process until we reach the end of the time series. The result is a set of predictions for each observation. We then average all the test set predictions to get the final score. This method is also known as "evaluating on a rolling  forecasting origin" because the origin of the test set is rolling forward one point at a time.  
+
+<img width="696" height="184" alt="image" src="https://github.com/user-attachments/assets/d8ba0dec-3ab8-41cf-9f75-1ea4c35e7013" />
+
+
+# Variable Selection in Time Series Regression
+
+Variable selection is the process of choosing the most useful predictors for a time series regression model. Two common approaches are **Cross-Validation** and **Information Criteria**.
+
+## 1. Cross-Validation
+
+In time series, we cannot randomly split the data because the order of observations matters. Instead, we use **time-based cross-validation**.
+
+### Rolling / Expanding Window Cross-Validation
+
+```text
+Train: 1 2 3 4 5       → Test: 6
+Train: 1 2 3 4 5 6     → Test: 7
+Train: 1 2 3 4 5 6 7   → Test: 8
+```
+
+The model is repeatedly trained on past observations and tested on future observations.
+
+### Common Evaluation Metrics
+
+**MAE (Mean Absolute Error)**
+
+```text
+MAE = (1/n) × Σ|yᵢ - ŷᵢ|
+```
+
+**RMSE (Root Mean Squared Error)**
+
+```text
+RMSE = √[(1/n) × Σ(yᵢ - ŷᵢ)²]
+```
+
+**MAPE (Mean Absolute Percentage Error)**
+
+```text
+MAPE = (100/n) × Σ|(yᵢ - ŷᵢ) / yᵢ|
+```
+
+### Selection Rule
+
+```text
+Lower MAE  → Better model
+Lower RMSE → Better model
+Lower MAPE → Better model
+```
+
+The model with the lowest validation error is generally preferred.
+
+---
+
+## 2. Information Criteria
+
+Information criteria evaluate a model based on its **goodness of fit** while applying a penalty for the **number of parameters**.
+
+They help prevent overfitting.
+
+### AIC (Akaike Information Criterion)
+
+```text
+AIC = 2k - 2ln(L)
+```
+
+### BIC (Bayesian Information Criterion)
+
+```text
+BIC = k ln(n) - 2ln(L)
+```
+
+### AICc (Corrected AIC)
+
+```text
+AICc = AIC + [2k(k + 1)] / (n - k - 1)
+```
+
+**Where**
+
+- `n` = Number of observations
+- `k` = Number of estimated parameters
+- `L` = Maximum likelihood of the model
+- `ln(L)` = Log-likelihood
+
+### Selection Rule
+
+```text
+Lower AIC  → Better model
+Lower AICc → Better model
+Lower BIC  → Better model
+```
+
+### AIC vs BIC
+
+```text
+AIC → Smaller penalty for additional parameters
+BIC → Larger penalty for additional parameters
+```
+
+Therefore, **BIC generally favors simpler models more strongly than AIC**.
+
+---
+
+## Cross-Validation vs Information Criteria
+
+| Method | Main Purpose | Selection Rule |
+|---|---|---|
+| Cross-Validation | Evaluate out-of-sample forecasting performance | Lower validation error |
+| AIC | Balance fit and complexity | Lower AIC |
+| AICc | AIC adjusted for small samples | Lower AICc |
+| BIC | Stronger penalty for complexity | Lower BIC |
+
+### Key Difference
+
+```text
+Cross-Validation → "Which model forecasts future data better?"
+
+Information Criteria → "Which model balances fit and complexity better?"
+```
+
+For **time series forecasting**, time-based cross-validation is particularly useful because it directly evaluates how well the model performs on unseen future observations.
