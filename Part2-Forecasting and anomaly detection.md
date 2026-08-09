@@ -536,4 +536,65 @@ Cross-Validation → "Which model forecasts future data better?"
 Information Criteria → "Which model balances fit and complexity better?"
 ```
 
-For **time series forecasting**, time-based cross-validation is particularly useful because it directly evaluates how well the model performs on unseen future observations.
+For **time series forecasting**, time-based cross-validation is particularly useful because it directly evaluates how well the model performs on unseen future observations.  
+
+# Predictor Variable Selection Using Cross-Validation
+
+Cross-validation can be used to select the best set of predictor variables by comparing the forecasting performance of different models.
+
+### Example
+
+Suppose we have:
+
+```text
+Target → Sales
+
+Predictors → Price, Advertising, Temperature, Holiday
+
+We create different models:  
+
+Model 1 → Sales ~ Price
+
+Model 2 → Sales ~ Price + Advertising
+
+Model 3 → Sales ~ Price + Advertising + Temperature
+
+Model 4 → Sales ~ Price + Advertising + Temperature + Holiday
+
+For each model, perform time-series cross-validation and calculate the validation error.
+
+Model 1 → RMSE = 15.2
+Model 2 → RMSE = 10.5
+Model 3 → RMSE = 9.1
+Model 4 → RMSE = 9.8
+
+Selection
+Lowest Validation RMSE → Model 3
+
+Therefore, the selected predictors are:
+
+Price + Advertising + Temperature
+
+Holiday is excluded because adding it increased the validation error.
+
+General Process
+1. Start with a set of candidate predictors.
+2. Create different combinations of predictors.
+3. Train each model using the training period.
+4. Predict the validation/future period.
+5. Calculate the validation error.
+6. Repeat across multiple time-based folds.
+7. Average the validation errors.
+8. Select the predictor set with the lowest average validation error.
+Important Point
+Variable Selection ≠ Selecting variables based only on p-values
+
+Variable Selection using Cross-Validation
+→ Select variables that improve out-of-sample prediction.
+
+For time series:
+
+Past Data → Training
+Future Data → Validation
+
+So, we select predictors based on how well they help predict unseen future observations, not simply because they are statistically significant.
