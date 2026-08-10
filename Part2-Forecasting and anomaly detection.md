@@ -414,7 +414,7 @@ The data should **not be randomly shuffled**, because time series data depends o
  There are several strategies for the variable selection, two of which will be discussed here: Cross validation and the use of information criteria metrics.  
 
  **Cross validation**
- The simplest way to select variables is to use cross-validation. This is a method that is commonly used in machine learning to select the best model. In essence, it is a more developed version of the holdout method. In the holdout method, we split the data into two sets: a training set and a test set. You fit the model on the training set and evaluate it on the test set. The problem with this method is that we are only using a fraction of the data to fit the model. This means that you are not using all the information in the data to fit the model. This is why cross-validation is a better method. In cross-validation, we split the data into k folds. We fit the model on k-1 folds and evaluate it on the remaining folds. We repeat this process k times, using a different fold as the test set every time. The final score is the average of k scores. This method is more robust because you are using all the data to fit the model and we are not overfitting the model to a specific fold. Now, the splits in time series cannot be random. We need to make sure that the folds are contiguous in time. This is because the data is not independent. The data is dependent on the previous observations. If we split the data randomly, we will be introducing a bias in the model. Most commonly, we will split the model between a test set of one observation and a training set of all the previous observations. For each k fold, we move it one observation forward. This is called a rolling window. We repeat this process until we reach the end of the time series. The result is a set of predictions for each observation. We then average all the test set predictions to get the final score. This method is also known as "evaluating on a rolling  forecasting origin" because the origin of the test set is rolling forward one point at a time.  
+ The simplest way to select variables is to use cross-validation. This is a method that is commonly used in machine learning to select the best model. In essence, it is a more developed version of the holdout method. In the holdout method, we split the data into two sets: a training set and a test set. You fit the model on the training set and evaluate it on the test set. The problem with this method is that we are only using a fraction of the data to fit the model. This means that you are not using all the information in the data to fit the model. This is why cross-validation is a better method. In cross-validation, we split the data into k folds. We fit the model on k-1 folds and evaluate it on the remaining folds. We repeat this process k times, using a different fold as the test set every time. The final score is the average of k scores. This method is more robust because you are using all the data to fit the model and we are not overfitting the model to a specific fold. Now, the splits in time series cannot be random. We need to make sure that the folds are contiguous(next to each other) in time. This is because the data is not independent. The data is dependent on the previous observations. If we split the data randomly, we will be introducing a bias in the model. Most commonly, we will split the model between a test set of one observation and a training set of all the previous observations. For each k fold, we move it one observation forward. This is called a rolling window. We repeat this process until we reach the end of the time series. The result is a set of predictions for each observation. We then average all the test set predictions to get the final score. This method is also known as "evaluating on a rolling  forecasting origin" because the origin of the test set is rolling forward one point at a time.  
 
 <img width="696" height="184" alt="image" src="https://github.com/user-attachments/assets/d8ba0dec-3ab8-41cf-9f75-1ea4c35e7013" />
 
@@ -546,10 +546,10 @@ Cross-validation can be used to select the best set of predictor variables by co
 
 Suppose we have:
 
-```text
 Target → Sales
 
 Predictors → Price, Advertising, Temperature, Holiday
+
 
 We create different models:  
 
@@ -597,4 +597,119 @@ For time series:
 Past Data → Training
 Future Data → Validation
 
-So, we select predictors based on how well they help predict unseen future observations, not simply because they are statistically significant.
+So, we select predictors based on how well they help predict unseen future observations, not simply because they are statistically significant.  
+
+## Information criteria metrics:
+Another way to select predictor variables for our model is to use an information criteria metric. This is a metric that is used to compare models. The most common metrics are the Akaike information criterion(AIC), the corrected Akaike's information criteria(AICc), and the Bayesian information criterion (BIC). Essentially, they will compare different models for the information they provide and penalize them for the number of parameters they have. The model with the lowest metric is the best model.  
+
+### Akaike Information Criterion (AIC)
+
+AIC = T × log(SSE / T) + 2(k + 2)
+
+Where:
+
+- T = Number of observations
+- SSE = Sum of Squared Errors
+- k = Number of predictors
+- log = Natural logarithm
+- k + 2 = Number of estimated parameters, including the intercept and error variance
+
+Lower AIC → Better model  
+
+An interesting characteristic of the AIC is that it is asymptotically equivalent at large Ts to minimize the cross-validation error. This means that the AIC will select the model that will perform the best on the test set.  
+
+## Corrected Akaike information criterion(AICc):  
+When we have a short time series, where T is small, the AIC will still tend to select models with too many variables. In this case the AICc is a better metric. It is defined as follows:  
+
+## Corrected Akaike Information Criterion (AICc)
+
+AICc = AIC + [2(k + 2)(k + 3)] / (T - k - 3)
+
+Where:
+
+- AIC = Akaike Information Criterion
+- k = Number of predictors
+- T = Number of observations
+
+Lower AICc → Better model. Essentially this metric attempts to correct for bias.  
+
+## Schwarz's Bayesian Information Criterion (BIC)
+
+BIC = T × log(SSE / T) + (k + 2) × log(T)
+
+Where:
+
+- T = Number of observations
+- SSE = Sum of Squared Errors
+- k = Number of predictors
+- log = Natural logarithm
+- k + 2 = Number of estimated parameters, including the intercept and error variance
+
+Lower BIC → Better model.  
+The main difference between BOC and AIC is that BIC will either select the same model as AIC or a model with fewer variables. This is because the penalty term is larger, and the criterion will penalize models with more variables more heavily. In the case of the BIC, it is the equivalent of minimizing the leave-one-out-cross-validation error for large values of T.  
+
+## Advanced Forecasting methods:  
+# 1. ETS model:  
+## ETS Model
+
+ETS stands for **Error, Trend, and Seasonal** components. It is a time series forecasting model based on exponential smoothing.
+
+### General Form
+
+Y(t) = Error + Trend + Seasonal
+
+### Components
+
+- **E = Error** → Random variation in the data
+- **T = Trend** → Long-term upward or downward movement
+- **S = Seasonal** → Repeating pattern over time
+
+### Types
+
+- **A** = Additive
+- **M** = Multiplicative
+- **N** = None
+
+Examples:
+
+```text
+ETS(A,N,N) → Additive Error, No Trend, No Seasonality
+
+ETS(A,A,N) → Additive Error, Additive Trend, No Seasonality
+
+ETS(A,A,A) → Additive Error, Additive Trend, Additive Seasonality
+
+ETS(M,A,M) → Multiplicative Error, Additive Trend, Multiplicative Seasonality
+```
+
+**Additive Model**  
+Y(t) = T(t) + S(t) + E(t)  
+**Multiplicative Model**  
+Y(t) = T(t) × S(t) × E(t)   
+**Key Point:**  
+ETS = Error + Trend + Seasonality  
+The model can use A (Additive), M (Multiplicative), or N (None) for each component.  
+
+
+## 2.ARIMA models(Autoregressive Integrated Moving Average):  
+Another very common type of model is the ARIMA model. ARIMA stands for autoregressive integrated moving average models. The main difference between ETS models and ARIMA models lies in what they are modeling. ETS models are modeling the state of the system based on a description of the trend and seasonality, while ARIMA models are modeling the auto-correlations in the time series.  
+
+## Stationarity in the time series:  
+A time series is stationary if its statistical properties do not change over time. This means that the mean, variance, and autocorrelation structure are constant over time. White noise is a good example of a stationary time series. A non-stationary time series will have trend and seasonality, which will affect the time series at different points in time. A time series with cyclic behavior is stationary, provided it has neither trend nor seasonality. There are several methods to check for stationarity such as: the augmented Dickey-Fuller test and the Kwiatkowski-Phillips-Schmidt-Shin test. A more visual test is to plot the ACF. If it drops quickly to 0, we are in the presence of a stationary time series.  
+
+## Differencing a time series for stationarity:  
+We can turn a non-stationary time series into a stationary time series through a process called differencing. Differencing is a very simple operation. We take the difference between the current observation and the previous observation. This is known as the first-order differencing. If we want to difference the differenced time series, we are doing second-order differencing, and so on. The number of times we difference a time series is known as the order of differencing. A variation of this method is when we take the difference between a data point and the previous observation of the same season. This is know as seasonal differencing, or lag-m differences, because we are subtracting the observation of the same season, m periods ago.  
+
+## Autoregressive models:  
+In the case of an autoregressive model, the dependent variable is a linear combination of the previous observations. This is known as an autoregressive model. The order of the autoregressive model is the number of previous observations that are used to predict the current observation and is denoted by p. These type of models are extremely flexible and can be used to model a wide variety of time series.  
+
+## Moving average models:  
+If instead of using the previous observations to predict the current observation, we use the errors of the previous observations, we get a moving average model. The order of the moving average model is the number of previous observations that are used to predict the current observation and is usually denoted by q. If we combine both of these models, we reach the ARIMA model. The ARIMA model is a combination of autoregressive and moving average models and is denoted by ARIMA(p,d,q). The p is the order of the autoregressive model, the d is the order of differencing, and the q is the order of the moving average model.  
+
+## SARIMA models:  
+ARIMA models do not handle seasonality well. This is where SARIMA models come in. SARIMA stands for Seasonal autoregressive integrated moving average. SARIMA models are a combination of ARIMA models and seasonal differencing. The SARIMA model is denoted by SARIMA(p,d,q)(P,D,Q)m, where the first three parameters are the same as the ARIMA model, and the last three parameters are the seasonal parameters. P is the order of the seasonal autoregressive model, D is the order of seasonal differencing, and Q is the order of the seasonal moving average model, m is the number of periods in a season.  
+
+## The Prophet model:  
+It was introduced by Facebook and it aims to forecast daily data with weekly and yearly seasonality. Behind the hood, this is an additive model in which a non-linear trend is established, incorporating yearly, weekly and daily cyclical patterns, as well as impacts from holidays. Its performance is optimal when used with data that exhibits strong seasonal fluctuations and a history featuring multiple seasonal cycles. It is also very easy to use, and it is very fast. It is very robust to missing data and shifts in the trend, and it handles outliers quite well.
+
+
