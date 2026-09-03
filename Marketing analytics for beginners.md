@@ -57,5 +57,29 @@ Companies don't create organic results. They use content to search engine optimi
 | **Control** | Google | Company |
 | **Speed** | Slow (takes time) | Instant |
 | **Visibility** | Earned | Bought |
-| **Label** | No label | Ad / Sponsored |
+| **Label** | No label | Ad / Sponsored |  
 
+## Organic Social/ Paid Social/ Organic Search:  
+
+### Organic social:  
+It refers to free(unpaid) content that a brand or user posts on social media platforms.  
+**Eg:** Posts on Instagram, LinkedIn, Facebook, Twitter etc.  
+
+Organic social: Free visibility on social media.  
+Paid social: Paid visibility on social media.  
+
+### How organic social works:  
+Social platforms(like Instagram, LinkedIn) use algorithms similar to Google. They decide who sees your post based on:  
+- Engagement (likes, comments, shares)
+- Relevance
+- Followers
+- Content quality
+So just like CEO, we don't fully control reach.
+
+| Feature | Organic Search | Organic Social |
+| :--- | :--- | :--- |
+| **Platform** | Google, Bing | Instagram, LinkedIn, Facebook |
+| **Cost** | Free | Free |
+| **How it works** | SEO (website ranking) | Social media algorithm |
+| **Content type** | Webpages, blogs | Posts, videos, stories |
+| **Control** | Low (Google decides) | Low (Platform algorithm decides) |
