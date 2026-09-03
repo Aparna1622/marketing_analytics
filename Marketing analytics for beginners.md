@@ -14,7 +14,7 @@ How many users visited the website. Unique visitors are users and Visits are lab
 In marketing analytics, a session is a group of user interactions that take place on your website or application within a given timeframe.  
 
 ## Organic search or Paid search:  
-## ORG:  
+# Organic search:  
 These results are unpaid listings that appear naturally on search engines based on relevance.  
 **Key features:**  
 -- no payment required  
@@ -31,7 +31,7 @@ Google ranks pages based on:
 -- Authority(trust level)  
 -- User experience(speed, mobile friendly)  
 
-## Paid search:  
+# Paid search:  
 These are advertisements where companies pay to appear in search results.  
 
 **Key features:**  
