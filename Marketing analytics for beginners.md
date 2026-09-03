@@ -49,3 +49,13 @@ These are advertisements where companies pay to appear in search results.
 **Important notes:**  
 Companies don't create organic results. They use content to search engine optimization. Companies create PS results by paying for them.  
 
+### Key Differences in a Nutshell:
+
+| Feature | Organic Search (OS) | Paid Search (PS) |
+| :--- | :--- | :--- |
+| **Cost** | Free | Paid (per click) |
+| **Control** | Google | Company |
+| **Speed** | Slow (takes time) | Instant |
+| **Visibility** | Earned | Bought |
+| **Label** | No label | Ad / Sponsored |
+
